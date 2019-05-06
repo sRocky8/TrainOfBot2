@@ -809,19 +809,19 @@ public class PlayerController : MonoBehaviour {
         {
             SceneManager.LoadScene(currentScene - 1);
         }
-        else if (whichScene == "ToEngine")
+        else if (whichScene == "EngineRoom")
         {
             SceneManager.LoadScene(6);
         }
-        else if (whichScene == "ToStorage")
+        else if (whichScene == "Storage")
         {
             SceneManager.LoadScene(2);
         }
-        else if (whichScene == "ToBathroom")
+        else if (whichScene == "Bathroom")
         {
             SceneManager.LoadScene(5);
         }
-        else if (whichScene == "ToResidence")
+        else if (whichScene == "Residence")
         {
             SceneManager.LoadScene(3);
         }
