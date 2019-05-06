@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Storage_Door_Texture
-  m_Shader: {fileID: 4800000, guid: 90c40a268417c4b4aa1f28a1bba61fa6, type: 3}
+  m_Name: residence tables Mat
+  m_Shader: {fileID: 4800000, guid: 44c956e101563e940903af89006b813d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7c8c423abe9e4b94f81597319e96ff1d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -69,8 +69,8 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineDot: 0.25
-    - _OutlineExtrusion: 0.2
+    - _OutlineDot: 0
+    - _OutlineExtrusion: 0.01
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
