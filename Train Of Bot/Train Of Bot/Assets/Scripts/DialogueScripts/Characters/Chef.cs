@@ -73,4 +73,3 @@ public class Chef : CharacterDialogue {
         }
     }
 }
-}

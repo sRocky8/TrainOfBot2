@@ -526,6 +526,34 @@ public class PlayerController : MonoBehaviour {
                     StartCoroutine(FadeOutCoRoutine("PreviousScene"));
                 }
             }
+            if (other.tag == "ToBathroom" && inMenu == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(FadeOutCoRoutine("Bathroom"));
+                }
+            }
+            if (other.tag == "ToResidence" && inMenu == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(FadeOutCoRoutine("Residence"));
+                }
+            }
+            if (other.tag == "ToStorage" && inMenu == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(FadeOutCoRoutine("Storage"));
+                }
+            }
+            if (other.tag == "ToEngine" && inMenu == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(FadeOutCoRoutine("EngineRoom"));
+                }
+            }
         }
     }
 
@@ -780,6 +808,22 @@ public class PlayerController : MonoBehaviour {
         else if (whichScene == "PreviousScene")
         {
             SceneManager.LoadScene(currentScene - 1);
+        }
+        else if (whichScene == "ToEngine")
+        {
+            SceneManager.LoadScene(6);
+        }
+        else if (whichScene == "ToStorage")
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (whichScene == "ToBathroom")
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if (whichScene == "ToResidence")
+        {
+            SceneManager.LoadScene(3);
         }
         fade.SetBool("FadingOut", false);
         canMove = true;
