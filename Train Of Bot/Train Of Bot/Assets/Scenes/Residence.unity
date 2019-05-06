@@ -358,6 +358,17 @@ MonoBehaviour:
   storageRoomBoxPos: {x: 12.68865, y: -9.108707, z: 14.47236}
   testCharacterCanRecieve: 0
   testCharacterCanGive: 0
+  bottleOfBoltsTaken: 0
+  cabinetKeyTaken: 0
+  chefsSpoonTaken: 0
+  cookedMechanicalDinnerTaken: 0
+  earmuffsTaken: 0
+  frozenMechanicalDinnerTaken: 0
+  gasCanisterTaken: 0
+  passengersEyeTaken: 0
+  plungerTaken: 0
+  rattleTaken: 0
+  valveTaken: 0
 --- !u!4 &973324218
 Transform:
   m_ObjectHideFlags: 0

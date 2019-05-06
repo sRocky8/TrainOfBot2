@@ -150,7 +150,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Dog Crate Texture
-    second: {fileID: 2800000, guid: 3e8e3635c2fd48f49b2fdb5c366a35a5, type: 3}
+    second: {fileID: 2800000, guid: 30f44bb6c1dffe5448af8ebf475575d7, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

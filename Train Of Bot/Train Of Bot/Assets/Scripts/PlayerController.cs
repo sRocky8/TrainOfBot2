@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject highlightChoice;
     public GameObject inventoryGameObject;
     public GameObject inventoryCursor;
+    public GameObject fadeGameObject;
 
     public Animator playerAnimator;
     public Animator fade;
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour {
     private int layerMask1;
     private int layerMask2;
     private int currentScene;
+    private int lastScene;
     private RectTransform highlightChoiceV3;
     private RectTransform inventoryChoice;
     private bool moving;
@@ -117,6 +119,11 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update () {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        if (currentScene != lastScene)
+        {
+            StartCoroutine(FadeInCoRoutine());
+        }
+        lastScene = currentScene;
         if (givingItem == true)
         {
             givingItem = false;
@@ -502,20 +509,22 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "NextScene" && inMenu == false)
+        if (canMove == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (other.tag == "NextScene" && inMenu == false)
             {
-                currentScene = SceneManager.GetActiveScene().buildIndex;
-                SceneManager.LoadScene(currentScene + 1);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log("NextScene");
+                    StartCoroutine(FadeOutCoRoutine("NextScene"));
+                }
             }
-        }
-        if(other.tag == "PreviousScene" && inMenu == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (other.tag == "PreviousScene" && inMenu == false)
             {
-                currentScene = SceneManager.GetActiveScene().buildIndex;
-                SceneManager.LoadScene(currentScene - 1);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartCoroutine(FadeOutCoRoutine("PreviousScene"));
+                }
             }
         }
     }
@@ -713,23 +722,23 @@ public class PlayerController : MonoBehaviour {
         }
         else if (hit.transform.name == "Dog")
         {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+            //inConversation = hit.collider.gameObject.GetComponent<Dog>().inConversation;
         }
         else if (hit.transform.name == "Mom")
         {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+            inConversation = hit.collider.gameObject.GetComponent<WomanRobot>().inConversation;
         }
         else if (hit.transform.name == "Boy")
         {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+            //inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
         }
         else if (hit.transform.name == "Chef")
         {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+            inConversation = hit.collider.gameObject.GetComponent<Chef>().inConversation;
         }
         else if (hit.transform.name == "ToiletMan")
         {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+            //inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
         }
         else if (hit.transform.name == "Main_Char_Model")
         {
@@ -749,11 +758,42 @@ public class PlayerController : MonoBehaviour {
 
     private IEnumerator FadeInCoRoutine()
     {
-        yield return new WaitForSeconds(0);
+        playerAnimator.Play("Idle");
+        canMove = false;
+        fade.Play("FadeIn");
+        yield return new WaitForSeconds(1);
+        //fadeGameObject.SetActive(false);
+        canMove = true;
     }
 
-    private IEnumerator FadeOutCoRoutine()
+    private IEnumerator FadeOutCoRoutine(string whichScene)
     {
-        yield return new WaitForSeconds(0);
+        playerAnimator.Play("Idle");
+        canMove = false;
+        //fadeGameObject.SetActive(true);
+        fade.SetBool("FadingOut", true);
+        yield return new WaitForSeconds(3);
+        if(whichScene == "NextScene")
+        {
+            SceneManager.LoadScene(currentScene + 1);
+        }
+        else if (whichScene == "PreviousScene")
+        {
+            SceneManager.LoadScene(currentScene - 1);
+        }
+        fade.SetBool("FadingOut", false);
+        canMove = true;
+    }
+
+    private void NextScene()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene + 1);
+    }
+
+    private void PreviousScene()
+    {
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene - 1);
     }
 }
