@@ -27,6 +27,10 @@ public class DataStorage : MonoBehaviour {
     public bool rattleTaken;
     public bool valveTaken;
 
+    //DOG
+    public bool dogEating;
+    public Vector3 dogLocation;
+
     private void Awake()
     {
         if (dataStorage == null)
@@ -55,6 +59,8 @@ public class DataStorage : MonoBehaviour {
         data.storageRoomBoxPos = StorageRoomBox.FindObjectOfType<Transform>().position;
         data.testCharacterCanRecieve = true;
         data.testCharacterCanGive = true;
+
+        //ITEMS
         data.bottleOfBoltsTaken = BottleOfBolts.FindObjectOfType<BottleOfBolts>().taken;
         data.cabinetKeyTaken = CabinetKey.FindObjectOfType<CabinetKey>().taken;
         data.chefsSpoonTaken = ChefsSpoon.FindObjectOfType<ChefsSpoon>().taken;
@@ -66,6 +72,11 @@ public class DataStorage : MonoBehaviour {
         data.plungerTaken = Plunger.FindObjectOfType<Plunger>().taken;
         data.rattleTaken = Rattle.FindObjectOfType<Rattle>().taken;
         data.valveTaken = Valve.FindObjectOfType<Valve>().taken;
+
+        //DOG
+        data.dogEating = Dog.FindObjectOfType<Dog>().eating;
+        data.dogLocation = Dog.FindObjectOfType<Transform>().position;
+        
 
         //        Data data = new Data
         //        {
@@ -102,6 +113,10 @@ public class DataStorage : MonoBehaviour {
             plungerTaken = data.plungerTaken;
             rattleTaken = data.rattleTaken;
             valveTaken = data.valveTaken;
+
+            //DOG
+            dogEating = data.dogEating;
+            dogLocation = data.dogLocation;
         }
     }
 
@@ -130,5 +145,9 @@ public class DataStorage : MonoBehaviour {
         public bool valveTaken;
 
         //NPCS
+
+        //DOG
+        public bool dogEating;
+        public Vector3 dogLocation;
     }
 }
