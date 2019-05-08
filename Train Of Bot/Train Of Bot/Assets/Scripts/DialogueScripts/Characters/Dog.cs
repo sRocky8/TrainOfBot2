@@ -6,6 +6,7 @@ public class Dog : MonoBehaviour {
 
     //Public Variables
     public bool eating = false;
+    public bool goimgToEat = false;
 
 
     //Private Variables

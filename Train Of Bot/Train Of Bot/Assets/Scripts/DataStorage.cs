@@ -31,6 +31,9 @@ public class DataStorage : MonoBehaviour {
     public bool dogEating;
     public Vector3 dogLocation;
 
+    //DOG BOWL
+    public bool bowlHasFood;
+
     private void Awake()
     {
         if (dataStorage == null)
@@ -76,7 +79,9 @@ public class DataStorage : MonoBehaviour {
         //DOG
         data.dogEating = Dog.FindObjectOfType<Dog>().eating;
         data.dogLocation = Dog.FindObjectOfType<Transform>().position;
-        
+
+        //DOG BOWL
+        data.bowlHasFood = DogBowl.FindObjectOfType<DogBowl>().hasFood;
 
         //        Data data = new Data
         //        {
@@ -117,6 +122,9 @@ public class DataStorage : MonoBehaviour {
             //DOG
             dogEating = data.dogEating;
             dogLocation = data.dogLocation;
+
+            //DOG BOWL
+            bowlHasFood = data.bowlHasFood;
         }
     }
 
@@ -149,5 +157,8 @@ public class DataStorage : MonoBehaviour {
         //DOG
         public bool dogEating;
         public Vector3 dogLocation;
+
+        //DOG BOWL
+        public bool bowlHasFood;
     }
 }

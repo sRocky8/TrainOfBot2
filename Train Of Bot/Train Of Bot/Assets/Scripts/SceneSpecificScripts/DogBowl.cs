@@ -5,7 +5,7 @@ using UnityEngine;
 public class DogBowl : MonoBehaviour {
 
     //Public Variables
-    public bool hasFood;
+    public bool hasFood = false;
     
     //Private Variables
 
@@ -13,7 +13,7 @@ public class DogBowl : MonoBehaviour {
 	void Start () {
         try
         {
-            hasFood = hasFood;
+            hasFood = DataStorage.dataStorage.bowlHasFood;
         }
         catch
         {
@@ -22,6 +22,14 @@ public class DogBowl : MonoBehaviour {
     }
 	
 	void Update () {
-		
+		if(hasFood == true)
+        {
+
+        }
 	}
+
+    private void OnDestroy()
+    {
+        DataStorage.dataStorage.bowlHasFood = hasFood;
+    }
 }
