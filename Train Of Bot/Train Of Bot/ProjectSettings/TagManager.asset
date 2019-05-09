@@ -23,6 +23,7 @@ TagManager:
   - ToBathroom
   - ToResidence
   - ToEngine
+  - DogBowl
   layers:
   - Default
   - TransparentFX

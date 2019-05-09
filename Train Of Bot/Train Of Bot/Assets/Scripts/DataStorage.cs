@@ -33,6 +33,7 @@ public class DataStorage : MonoBehaviour {
 
     //DOG BOWL
     public bool bowlHasFood;
+    public bool dinnerActive;
 
     private void Awake()
     {
@@ -82,6 +83,7 @@ public class DataStorage : MonoBehaviour {
 
         //DOG BOWL
         data.bowlHasFood = DogBowl.FindObjectOfType<DogBowl>().hasFood;
+        data.dinnerActive = DogBowl.FindObjectOfType<DogBowl>().dinnerActive;
 
         //        Data data = new Data
         //        {
@@ -125,6 +127,7 @@ public class DataStorage : MonoBehaviour {
 
             //DOG BOWL
             bowlHasFood = data.bowlHasFood;
+            dinnerActive = data.dinnerActive;
         }
     }
 
@@ -160,5 +163,6 @@ public class DataStorage : MonoBehaviour {
 
         //DOG BOWL
         public bool bowlHasFood;
+        public bool dinnerActive;
     }
 }

@@ -6,6 +6,8 @@ public class DogBowl : MonoBehaviour {
 
     //Public Variables
     public bool hasFood = false;
+    public bool dinnerActive = false;
+    public GameObject cookedMechanicalDinner;
     
     //Private Variables
 
@@ -14,6 +16,7 @@ public class DogBowl : MonoBehaviour {
         try
         {
             hasFood = DataStorage.dataStorage.bowlHasFood;
+            dinnerActive = DataStorage.dataStorage.dinnerActive;
         }
         catch
         {
@@ -24,12 +27,13 @@ public class DogBowl : MonoBehaviour {
 	void Update () {
 		if(hasFood == true)
         {
-
+            cookedMechanicalDinner.SetActive(true);
         }
 	}
 
     private void OnDestroy()
     {
         DataStorage.dataStorage.bowlHasFood = hasFood;
+        DataStorage.dataStorage.dinnerActive = dinnerActive;
     }
 }

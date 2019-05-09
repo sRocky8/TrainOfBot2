@@ -6,13 +6,17 @@ public class Dog : MonoBehaviour {
 
     //Public Variables
     public bool eating = false;
-    public bool goimgToEat = false;
-
+    public bool goingToEat = false;
+    public bool moving = false;
+    public Vector3 startingPosition;
+    public Vector3 endingPosition;
+    public float lerpPosition;
+    public float translationValue;
 
     //Private Variables
     private Animator dogAnimator;
 
-    
+
     void Start()
     {
         try
@@ -37,10 +41,32 @@ public class Dog : MonoBehaviour {
         }
         else
         {
-            return;
+            if (FindObjectOfType<DogBowl>().hasFood == true)
+            {
+                goingToEat = true;
+            }
+            if (goingToEat == true)
+            {
+                StartCoroutine(WalkToFoodCoRoutine());
+            }
+            if (moving == true)
+            {
+                transform.position = Vector3.Lerp(startingPosition, endingPosition, lerpPosition);
+                lerpPosition += 1.0f / translationValue;
+            }
         }
     }
 
-
+    private IEnumerator WalkToFoodCoRoutine()
+    {
+        FindObjectOfType<PlayerController>().stopPlayer = true;
+        dogAnimator.Play("GetUp");
+        yield return new WaitForSeconds(0.983f);
+        moving = true;
+        yield return new WaitForSeconds(1.834f);
+        moving = false;
+        eating = true;
+        FindObjectOfType<PlayerController>().stopPlayer = false;
+    }
 }
 
