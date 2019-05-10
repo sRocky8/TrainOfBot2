@@ -15,6 +15,7 @@ public class Dog : MonoBehaviour {
 
     //Private Variables
     private Animator dogAnimator;
+    private bool onTheWay;
 
 
     void Start()
