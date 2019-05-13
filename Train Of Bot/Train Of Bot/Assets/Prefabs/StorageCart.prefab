@@ -4432,7 +4432,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -5947,8 +5947,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.174525, y: 2.3350897, z: 5.8569694}
-  m_Center: {x: 0.10185361, y: 0.27028918, z: 2.4284842}
+  m_Size: {x: 3.174525, y: 2.33509, z: 7.988939}
+  m_Center: {x: 0.10185336, y: 0.2702893, z: 1.3624979}
 --- !u!65 &65932227720415826
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6181,8 +6181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endedDialogue: 0
   inConversation: 0
-  canGiveItem: 0
-  canRecieveItem: 0
   rayMaxDistance: 3
   dialogueParameter: 0
   npcDialogue:
@@ -6209,8 +6207,6 @@ MonoBehaviour:
     - parameterDescription: Take no items to give or take
       linesOfDialogue:
       - I already got the Rattle...
-  canRecieveChefsSpoon: 0
-  canRecieveBottle: 0
   chefsSpoon: {fileID: 1364867517458032}
   bottle: {fileID: 1536958475777740}
   rattle: {fileID: 1926271739853452}

@@ -150,7 +150,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Dog Crate Texture
-    second: {fileID: 2800000, guid: a82fe066a149a7747b8893e3d9661df7, type: 3}
+    second: {fileID: 2800000, guid: 855c43fed2bf77347bf8d9b64199b025, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -222,7 +222,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

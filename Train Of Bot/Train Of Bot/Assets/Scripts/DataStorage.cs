@@ -11,8 +11,8 @@ public class DataStorage : MonoBehaviour {
 
     public float testFloat;
     public Vector3 storageRoomBoxPos;
-    public bool testCharacterCanRecieve;
-    public bool testCharacterCanGive;
+    public bool? testCharacterCanRecieve;
+    public bool? testCharacterCanGive;
 
     //HAS STUFF BEEN TAKEN?
     public bool bottleOfBoltsTaken;
@@ -36,9 +36,14 @@ public class DataStorage : MonoBehaviour {
     public bool dinnerActive;
 
     //WORKTABLE
-    public bool canRecieveChefsSpoon;
-    public bool canRecieveBottle;
-    public bool tableCanGiveItem;
+    public bool? canRecieveChefsSpoon;
+    public bool? canRecieveBottle;
+    public bool? tableCanGiveItem;
+
+    //STOVE
+    public bool? canRecieveFMD;
+    public bool? canRecieveGasCanister;
+    public bool? stoveCanGiveItem;
 
     private void Awake()
     {
@@ -95,12 +100,17 @@ public class DataStorage : MonoBehaviour {
         data.canRecieveBottle = Worktable.FindObjectOfType<Worktable>().canRecieveBottle;
         data.tableCanGiveItem = Worktable.FindObjectOfType<Worktable>().canGiveItem;
 
-    //        Data data = new Data
-    //        {
-    //            testFloat = 0.0f
-    //        };
+        //STOVE
+        data.canRecieveFMD = Stove.FindObjectOfType<Stove>().canRecieveFMD;
+        data.canRecieveGasCanister = Stove.FindObjectOfType<Stove>().canRecieveGasCanister;
+        data.stoveCanGiveItem = Stove.FindObjectOfType<Stove>().canGiveItem;
 
-    binaryFormatter.Serialize(dataFile, data);
+        //        Data data = new Data
+        //        {
+        //            testFloat = 0.0f
+        //        };
+
+        binaryFormatter.Serialize(dataFile, data);
         dataFile.Close();
     }
 
@@ -143,6 +153,11 @@ public class DataStorage : MonoBehaviour {
             canRecieveBottle = data.canRecieveBottle;
             canRecieveChefsSpoon = data.canRecieveChefsSpoon;
             tableCanGiveItem = data.tableCanGiveItem;
+
+            //STOVE
+            canRecieveFMD = data.canRecieveFMD;
+            canRecieveGasCanister = data.canRecieveGasCanister;
+            stoveCanGiveItem = data.stoveCanGiveItem;
         }
     }
 
@@ -151,8 +166,8 @@ public class DataStorage : MonoBehaviour {
     {
         //TESTING
         public float testFloat;
-        public bool testCharacterCanRecieve;
-        public bool testCharacterCanGive;
+        public bool? testCharacterCanRecieve;
+        public bool? testCharacterCanGive;
 
         //MISC OBJECTS
         public Vector3 storageRoomBoxPos;
@@ -181,8 +196,13 @@ public class DataStorage : MonoBehaviour {
         public bool dinnerActive;
 
         //WORKTABLE
-        public bool canRecieveChefsSpoon;
-        public bool canRecieveBottle;
-        public bool tableCanGiveItem;
+        public bool? canRecieveChefsSpoon;
+        public bool? canRecieveBottle;
+        public bool? tableCanGiveItem;
+
+        //STOVE
+        public bool? canRecieveFMD;
+        public bool? canRecieveGasCanister;
+        public bool? stoveCanGiveItem;
     }
 }
