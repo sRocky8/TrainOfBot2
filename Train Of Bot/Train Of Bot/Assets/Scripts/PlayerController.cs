@@ -781,10 +781,6 @@ public class PlayerController : MonoBehaviour {
         {
             inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
         }
-        else if (hit.transform.name == "Dog")
-        {
-            //inConversation = hit.collider.gameObject.GetComponent<Dog>().inConversation;
-        }
         else if (hit.transform.name == "Mom")
         {
             inConversation = hit.collider.gameObject.GetComponent<WomanRobot>().inConversation;
@@ -804,6 +800,10 @@ public class PlayerController : MonoBehaviour {
         else if (hit.transform.name == "Main_Char_Model")
         {
             inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
+        }
+        else if(hit.transform.name == "Worktable")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<Worktable>().inConversation;
         }
         else
         {

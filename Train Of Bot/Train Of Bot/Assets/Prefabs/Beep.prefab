@@ -1807,18 +1807,18 @@ MonoBehaviour:
   - {fileID: 114505287403987426}
   - {fileID: 114980271131494668}
   inventoryImage:
-  - {fileID: 21300000, guid: 2599bf98db3d0f348aa1710f006d9286, type: 3}
-  - {fileID: 21300000, guid: af79e36b2e47e5449abc70a6971e7614, type: 3}
-  - {fileID: 21300000, guid: 040a6eb9ae5d9c149a4b84505d5f5dfd, type: 3}
-  - {fileID: 21300000, guid: 56582b26187413a4fa4a90f0a3bd0701, type: 3}
-  - {fileID: 21300000, guid: 00d0d4d539adc704e81c56eaf0b648f3, type: 3}
-  - {fileID: 21300000, guid: abf7746ffbde1364393c51c104a08e98, type: 3}
-  - {fileID: 21300000, guid: e33ec1037ff2d5e4091dec93d1bb5e9e, type: 3}
-  - {fileID: 21300000, guid: 6acf004117af97645a0e09b9885b772d, type: 3}
-  - {fileID: 21300000, guid: ae34e13241b33524e8ae25572b67c4d9, type: 3}
+  - {fileID: 21300000, guid: ff7d41352b6f0b8458e47f37ac2ddacc, type: 3}
+  - {fileID: 21300000, guid: 1272a84f737f9a94d8d73bd309051ab8, type: 3}
+  - {fileID: 21300000, guid: 071440bfb81fc7147b1f80e87f34fc6a, type: 3}
+  - {fileID: 21300000, guid: e131929fd42084d41906ba71f7b41dff, type: 3}
+  - {fileID: 21300000, guid: 3f027b8b80050ca4f8f1ce925da809de, type: 3}
+  - {fileID: 21300000, guid: 8b55d33a46ffc7b4db755aa9e5887e7c, type: 3}
+  - {fileID: 21300000, guid: c577b387f113f6a4cb1fe21f7edb5e86, type: 3}
+  - {fileID: 21300000, guid: 7a18755f901385143a893b561be46916, type: 3}
+  - {fileID: 21300000, guid: 00678160654ae154e9f9c78fd45235dd, type: 3}
   - {fileID: 21300000, guid: 49ebd4c4694320a40bbf947d57db83ac, type: 3}
-  - {fileID: 21300000, guid: 4adbcede745090442b7a279c58a1b876, type: 3}
-  - {fileID: 21300000, guid: 13a4ca3e35d3d8a488fa648c082229fc, type: 3}
+  - {fileID: 21300000, guid: 76463f42160be4045b58f27879c48857, type: 3}
+  - {fileID: 21300000, guid: c763746ce68193a43b0eac4bc3a287cf, type: 3}
   - {fileID: 21300000, guid: 9e5d286ddde21a94fb4e8bb3d698c0d7, type: 3}
   inConversation: 0
   lookingAtSpeaker: 0
@@ -1837,6 +1837,7 @@ MonoBehaviour:
   fadeGameObject: {fileID: 1193114841919078}
   playerAnimator: {fileID: 0}
   fade: {fileID: 95563725708688460}
+  stopPlayer: 0
 --- !u!114 &114332637484307452
 MonoBehaviour:
   m_ObjectHideFlags: 1

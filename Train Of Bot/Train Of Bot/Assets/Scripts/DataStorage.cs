@@ -35,6 +35,11 @@ public class DataStorage : MonoBehaviour {
     public bool bowlHasFood;
     public bool dinnerActive;
 
+    //WORKTABLE
+    public bool canRecieveChefsSpoon;
+    public bool canRecieveBottle;
+    public bool tableCanGiveItem;
+
     private void Awake()
     {
         if (dataStorage == null)
@@ -85,12 +90,17 @@ public class DataStorage : MonoBehaviour {
         data.bowlHasFood = DogBowl.FindObjectOfType<DogBowl>().hasFood;
         data.dinnerActive = DogBowl.FindObjectOfType<DogBowl>().dinnerActive;
 
-        //        Data data = new Data
-        //        {
-        //            testFloat = 0.0f
-        //        };
+        //WORKTABLE
+        data.canRecieveChefsSpoon = Worktable.FindObjectOfType<Worktable>().canRecieveChefsSpoon;
+        data.canRecieveBottle = Worktable.FindObjectOfType<Worktable>().canRecieveBottle;
+        data.tableCanGiveItem = Worktable.FindObjectOfType<Worktable>().canGiveItem;
 
-        binaryFormatter.Serialize(dataFile, data);
+    //        Data data = new Data
+    //        {
+    //            testFloat = 0.0f
+    //        };
+
+    binaryFormatter.Serialize(dataFile, data);
         dataFile.Close();
     }
 
@@ -128,6 +138,11 @@ public class DataStorage : MonoBehaviour {
             //DOG BOWL
             bowlHasFood = data.bowlHasFood;
             dinnerActive = data.dinnerActive;
+
+            //WORKTABLE
+            canRecieveBottle = data.canRecieveBottle;
+            canRecieveChefsSpoon = data.canRecieveChefsSpoon;
+            tableCanGiveItem = data.tableCanGiveItem;
         }
     }
 
@@ -164,5 +179,10 @@ public class DataStorage : MonoBehaviour {
         //DOG BOWL
         public bool bowlHasFood;
         public bool dinnerActive;
+
+        //WORKTABLE
+        public bool canRecieveChefsSpoon;
+        public bool canRecieveBottle;
+        public bool tableCanGiveItem;
     }
 }

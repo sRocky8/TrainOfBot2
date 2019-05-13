@@ -5,25 +5,29 @@ using UnityEngine;
 public class Dog : MonoBehaviour {
 
     //Public Variables
-    public bool eating = false;
+    public bool eating;
     public bool goingToEat = false;
     public bool moving = false;
     public Vector3 startingPosition;
     public Vector3 endingPosition;
     public float lerpPosition;
     public float translationValue;
+    public float timeUntilStartMoving;
+    public float timeUntilStopMoving;
 
     //Private Variables
     private Animator dogAnimator;
-    private bool onTheWay;
 
 
     void Start()
     {
         try
         {
-            transform.position = DataStorage.dataStorage.dogLocation;
-            eating = DataStorage.dataStorage.dogEating;
+            if (DataStorage.dataStorage.dogLocation != Vector3.zero)
+            {
+                transform.position = DataStorage.dataStorage.dogLocation;
+                eating = DataStorage.dataStorage.dogEating;
+            }
         }
         catch
         {
@@ -36,8 +40,6 @@ public class Dog : MonoBehaviour {
     {
         if (eating == true)
         {
-            DataStorage.dataStorage.dogLocation = transform.position;
-            DataStorage.dataStorage.dogEating = eating;
             dogAnimator.Play("Eat");
         }
         else
@@ -60,14 +62,22 @@ public class Dog : MonoBehaviour {
 
     private IEnumerator WalkToFoodCoRoutine()
     {
+        goingToEat = false;
         FindObjectOfType<PlayerController>().stopPlayer = true;
-        dogAnimator.Play("GetUp");
-        yield return new WaitForSeconds(0.983f);
+        dogAnimator.SetBool("FoodInBowl", true);
+        //dogAnimator.Play("GetUp");
+        yield return new WaitForSeconds(timeUntilStartMoving);
         moving = true;
-        yield return new WaitForSeconds(1.834f);
+        yield return new WaitForSeconds(timeUntilStopMoving);
         moving = false;
         eating = true;
         FindObjectOfType<PlayerController>().stopPlayer = false;
+    }
+
+    private void OnDestroy()
+    {
+        DataStorage.dataStorage.dogLocation = transform.position;
+        DataStorage.dataStorage.dogEating = eating;
     }
 }
 
