@@ -7,8 +7,8 @@ public class CharacterDialogue : MonoBehaviour {
     //Public Variables
     [HideInInspector] public bool endedDialogue;
     [HideInInspector] public bool inConversation;
-    [HideInInspector] public bool canGiveItem;
-    [HideInInspector] public bool canRecieveItem;
+    [HideInInspector] public bool? canGiveItem;
+    [HideInInspector] public bool? canRecieveItem;
     public float rayMaxDistance;
     public int dialogueParameter;
     public DialogueClass npcDialogue;
