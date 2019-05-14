@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: e6a187e8cdbc9b24aa34635d43d08a69
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: hobo_beard
+    100004: hobo_beard 1
+    100006: Hobo_Bot_Mesh
+    100008: hobo_chest
+    100010: hobo_chest 1
+    100012: hobo_head
+    100014: hobo_l_bot_claw
+    100016: hobo_l_bot_knuckle
+    100018: hobo_l_claw_grip
+    100020: hobo_l_shoulder
+    100022: hobo_l_shoulder 1
+    100024: hobo_l_stache
+    100026: hobo_l_stache 1
+    100028: hobo_l_top_claw
+    100030: hobo_l_top_knuckle
+    100032: hobo_l_wrist
+    100034: hobo_l_wrist 1
+    100036: hobo_neck
+    100038: hobo_neck 1
+    100040: hobo_r_bot_claw
+    100042: hobo_r_bot_knuckle
+    100044: hobo_r_claw_grip
+    100046: hobo_r_shoulder
+    100048: hobo_r_shoulder 1
+    100050: hobo_r_stache
+    100052: hobo_r_stache 1
+    100054: hobo_r_top_claw
+    100056: hobo_r_top_knuckle
+    100058: hobo_r_wrist
+    100060: hobo_r_wrist 1
+    100062: hobo_stache
+    100064: hobo_stache 1
+    100066: hobo_waist
+    100068: hobo_waist1
+    100070: hobo_wheel
+    100072: hobo_wheel 1
+    400000: //RootNode
+    400002: hobo_beard
+    400004: hobo_beard 1
+    400006: Hobo_Bot_Mesh
+    400008: hobo_chest
+    400010: hobo_chest 1
+    400012: hobo_head
+    400014: hobo_l_bot_claw
+    400016: hobo_l_bot_knuckle
+    400018: hobo_l_claw_grip
+    400020: hobo_l_shoulder
+    400022: hobo_l_shoulder 1
+    400024: hobo_l_stache
+    400026: hobo_l_stache 1
+    400028: hobo_l_top_claw
+    400030: hobo_l_top_knuckle
+    400032: hobo_l_wrist
+    400034: hobo_l_wrist 1
+    400036: hobo_neck
+    400038: hobo_neck 1
+    400040: hobo_r_bot_claw
+    400042: hobo_r_bot_knuckle
+    400044: hobo_r_claw_grip
+    400046: hobo_r_shoulder
+    400048: hobo_r_shoulder 1
+    400050: hobo_r_stache
+    400052: hobo_r_stache 1
+    400054: hobo_r_top_claw
+    400056: hobo_r_top_knuckle
+    400058: hobo_r_wrist
+    400060: hobo_r_wrist 1
+    400062: hobo_stache
+    400064: hobo_stache 1
+    400066: hobo_waist
+    400068: hobo_waist1
+    400070: hobo_wheel
+    400072: hobo_wheel 1
+    2100000: lambert2
+    4300000: Hobo_Bot_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Hobo_Bot_Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

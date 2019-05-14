@@ -20,17 +20,17 @@ public class Stove : CharacterDialogue {
         canGiveItem = true;
         try
         {
-            if (DataStorage.dataStorage.tableCanGiveItem != null)
+            if (DataStorage.dataStorage.stoveCanGiveItem != null)
             {
-                canGiveItem = DataStorage.dataStorage.tableCanGiveItem;
+                canGiveItem = DataStorage.dataStorage.stoveCanGiveItem;
             }
-            if (DataStorage.dataStorage.canRecieveChefsSpoon != null)
+            if (DataStorage.dataStorage.canRecieveFMD != null)
             {
-                canRecieveChefsSpoon = DataStorage.dataStorage.canRecieveChefsSpoon;
+                canRecieveFMD = DataStorage.dataStorage.canRecieveFMD;
             }
-            if (DataStorage.dataStorage.canRecieveBottle != null)
+            if (DataStorage.dataStorage.canRecieveGasCanister != null)
             {
-                canRecieveBottle = DataStorage.dataStorage.canRecieveBottle;
+                canRecieveGasCanister = DataStorage.dataStorage.canRecieveGasCanister;
             }
         }
         catch
@@ -48,31 +48,31 @@ public class Stove : CharacterDialogue {
 
     void CheckDialogueParam()
     {
-        if (canRecieveBottle == false && canRecieveChefsSpoon == true)
+        if (canRecieveFMD == false && canRecieveGasCanister == true)
         {
-            bottle.SetActive(true);
+            frozenMechanicalDinner.SetActive(true);
         }
-        if (canRecieveBottle == true && canRecieveChefsSpoon == false)
+        if (canRecieveFMD == true && canRecieveGasCanister == false)
         {
-            chefsSpoon.SetActive(true);
+            gasCanister.SetActive(true);
         }
-        if ((canRecieveChefsSpoon == false && canRecieveBottle == false) && DataStorage.dataStorage.rattleTaken == false)
+        if ((canRecieveFMD == false && canRecieveGasCanister == false) && DataStorage.dataStorage.cookedMechanicalDinnerTaken == false)
         {
-            rattle.SetActive(true);
+            cookedMechanicalDinner.SetActive(true);
         }
-        if (chefsSpoon.activeSelf == true && bottle.activeSelf == true)
+        if (frozenMechanicalDinner.activeSelf == true && gasCanister.activeSelf == true)
         {
-            chefsSpoon.SetActive(false);
-            bottle.SetActive(false);
-            rattle.SetActive(true);
+            frozenMechanicalDinner.SetActive(false);
+            gasCanister.SetActive(false);
+            cookedMechanicalDinner.SetActive(true);
         }
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
-        if (playerMenuNum == 0 && (canRecieveChefsSpoon == true || canRecieveBottle == true))
+        if (playerMenuNum == 0 && (canRecieveFMD == true || canRecieveGasCanister == true))
         {
             //WORKS
             dialogueParameter = 0;
         }
-        else if (playerMenuNum == 1 && (canRecieveChefsSpoon == true || canRecieveBottle == true))
+        else if (playerMenuNum == 1 && (canRecieveFMD == true || canRecieveGasCanister == true))
         {
             //WORKS
             dialogueParameter = 1;
@@ -82,28 +82,28 @@ public class Stove : CharacterDialogue {
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
-                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.BottleOfBolts)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.GasCanister)
                 {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
                         FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
                         FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveBottle = false;
-                        bottle.SetActive(true);
+                        canRecieveGasCanister = false;
+                        gasCanister.SetActive(true);
                         break;
                     }
                 }
 
-                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.ChefsSpoon)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.FrozenMechanicalDinner)
                 {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
                         FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
                         FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveChefsSpoon = false;
-                        chefsSpoon.SetActive(true);
+                        canRecieveFMD = false;
+                        frozenMechanicalDinner.SetActive(true);
                         break;
                     }
                 }
@@ -123,12 +123,12 @@ public class Stove : CharacterDialogue {
             }
         }
 
-        else if (playerMenuNum == 0 && (canRecieveChefsSpoon == false && canRecieveBottle == false))
+        else if (playerMenuNum == 0 && (canRecieveFMD == false && canRecieveGasCanister == false))
         {
             //WORKS
             dialogueParameter = 3;
         }
-        else if (playerMenuNum == 1 && (canRecieveChefsSpoon == false && canRecieveBottle == false))
+        else if (playerMenuNum == 1 && (canRecieveFMD == false && canRecieveGasCanister == false))
         {
             if (canGiveItem == true)
             {
@@ -149,8 +149,8 @@ public class Stove : CharacterDialogue {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.tableCanGiveItem = canGiveItem;
-        DataStorage.dataStorage.canRecieveBottle = canRecieveBottle;
-        DataStorage.dataStorage.canRecieveChefsSpoon = canRecieveChefsSpoon;
+        DataStorage.dataStorage.stoveCanGiveItem = canGiveItem;
+        DataStorage.dataStorage.canRecieveFMD = canRecieveFMD;
+        DataStorage.dataStorage.canRecieveGasCanister = canRecieveGasCanister;
     }
 }
