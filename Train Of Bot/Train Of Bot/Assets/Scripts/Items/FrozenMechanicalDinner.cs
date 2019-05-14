@@ -10,7 +10,12 @@ public class FrozenMechanicalDinner : MonoBehaviour {
     {
         try
         {
-            transform.position = DataStorage.dataStorage.storageRoomBoxPos;
+            taken = DataStorage.dataStorage.frozenMechanicalDinnerTaken;
+
+            if (taken == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
@@ -20,6 +25,6 @@ public class FrozenMechanicalDinner : MonoBehaviour {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.storageRoomBoxPos = transform.position;
+        DataStorage.dataStorage.frozenMechanicalDinnerTaken = taken;
     }
 }

@@ -921,6 +921,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1470984722109200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4452185634653936}
+  - component: {fileID: 33808977550310154}
+  - component: {fileID: 23063123100340124}
+  - component: {fileID: 65599482600800726}
+  - component: {fileID: 54586707833858370}
+  - component: {fileID: 114570176049466838}
+  m_Layer: 0
+  m_Name: TriggerDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1477764009877996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1719,7 @@ GameObject:
   - component: {fileID: 54180482019080622}
   - component: {fileID: 114356424756335676}
   m_Layer: 0
-  m_Name: TriggerDoor
+  m_Name: TriggerDoor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1955831527870380
 GameObject:
   m_ObjectHideFlags: 1
@@ -1861,11 +1881,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1917556917371140}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 12.23, y: -3.33, z: 9.34}
-  m_LocalScale: {x: 453.1408, y: 150.015, z: 140.43147}
+  m_LocalPosition: {x: 12.23, y: -3.33, z: 1.94}
+  m_LocalScale: {x: 521.0217, y: 150.015, z: 140.43158}
   m_Children: []
   m_Father: {fileID: 4415070305650952}
-  m_RootOrder: 17
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4010741482507652
 Transform:
@@ -2543,11 +2563,12 @@ Transform:
   - {fileID: 4874707020938256}
   - {fileID: 4357858275588736}
   - {fileID: 4199457390602294}
-  - {fileID: 4008108773653690}
+  - {fileID: 4452185634653936}
   - {fileID: 4258946507309590}
   - {fileID: 4758133268427006}
   - {fileID: 4187406818886712}
   - {fileID: 4312030800200762}
+  - {fileID: 4008108773653690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2590,6 +2611,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4758104021816146}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4452185634653936
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 12.23, y: -3.33, z: 9.34}
+  m_LocalScale: {x: 453.1408, y: 150.015, z: 140.43147}
+  m_Children: []
+  m_Father: {fileID: 4415070305650952}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4459557866117638
 Transform:
@@ -3459,6 +3493,41 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: aa06b4d5736b1034f9fe111aec768ab3, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23063123100340124
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: dd7d366c99d2f1846972150e6b40b9ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5494,6 +5563,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625688129414326}
   m_Mesh: {fileID: 4300000, guid: d259387b6cfe5554eb7fa9c166e3e943, type: 3}
+--- !u!33 &33808977550310154
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
+  m_Mesh: {fileID: 4300000, guid: d259387b6cfe5554eb7fa9c166e3e943, type: 3}
 --- !u!33 &33820189431795788
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -5628,6 +5704,21 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338879552727024}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54586707833858370
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -5841,6 +5932,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.960415, y: 2.0662458, z: 14}
   m_Center: {x: 0, y: 0.0000007748604, z: -0.0000019073486}
+--- !u!65 &65599482600800726
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010000003, y: 0.01, z: 0.010000003}
+  m_Center: {x: 0.000000033527613, y: 0, z: -0.000000044703484}
 --- !u!65 &65606544036712416
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6132,6 +6235,7 @@ MonoBehaviour:
   translationValue: 50
   timeUntilStartMoving: 1
   timeUntilStopMoving: 2
+  toEngine: {fileID: 1948440596574548}
 --- !u!114 &114170007743484666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6207,9 +6311,22 @@ MonoBehaviour:
     - parameterDescription: Take no items to give or take
       linesOfDialogue:
       - I already got the Rattle...
+  lookingAtPlayer: 0
   chefsSpoon: {fileID: 1364867517458032}
   bottle: {fileID: 1536958475777740}
   rattle: {fileID: 1926271739853452}
+--- !u!114 &114570176049466838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1470984722109200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01c51b25d8eae64281163a800b9caaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorTrigger: {fileID: 1507584334513822}
 --- !u!114 &114740097448926680
 MonoBehaviour:
   m_ObjectHideFlags: 1

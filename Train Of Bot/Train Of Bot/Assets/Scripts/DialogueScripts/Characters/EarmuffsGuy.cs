@@ -45,8 +45,8 @@ public class EarmuffsGuy : CharacterDialogue {
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
+                        FindObjectOfType<PlayerController>().inventorySlot[i] = (int)Items.TP;
+                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[(int)Items.TP];
                         canRecieveItem = false;
                         break;
                     }

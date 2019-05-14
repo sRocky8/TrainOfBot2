@@ -24,6 +24,7 @@ TagManager:
   - ToResidence
   - ToEngine
   - DogBowl
+  - StoveCode
   layers:
   - Default
   - TransparentFX

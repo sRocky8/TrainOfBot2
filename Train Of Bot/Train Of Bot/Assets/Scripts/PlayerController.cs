@@ -805,6 +805,10 @@ public class PlayerController : MonoBehaviour {
         {
             inConversation = hit.collider.gameObject.GetComponent<Worktable>().inConversation;
         }
+        else if (hit.transform.name == "StoveCode")
+        {
+            inConversation = hit.collider.gameObject.GetComponent<Stove>().inConversation;
+        }
         else
         {
             return;

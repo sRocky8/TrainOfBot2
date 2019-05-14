@@ -13,12 +13,13 @@ public class CharacterDialogue : MonoBehaviour {
     public int dialogueParameter;
     public DialogueClass npcDialogue;
 
+    [HideInInspector]public bool lookingAtPlayer;
+
     //Protected Variables
     protected RaycastHit hit;
     protected int[] playerInventorySlot;
 
     protected int layerMask1 = 1 << 10;
-    protected bool lookingAtPlayer;
     protected bool playerLooking;
 
     protected bool playerInMenu;

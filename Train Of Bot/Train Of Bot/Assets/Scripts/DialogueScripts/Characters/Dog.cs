@@ -14,6 +14,7 @@ public class Dog : MonoBehaviour {
     public float translationValue;
     public float timeUntilStartMoving;
     public float timeUntilStopMoving;
+    public GameObject toEngine;
 
     //Private Variables
     private Animator dogAnimator;
@@ -40,6 +41,7 @@ public class Dog : MonoBehaviour {
     {
         if (eating == true)
         {
+            toEngine.SetActive(true);
             dogAnimator.Play("Eat");
         }
         else
