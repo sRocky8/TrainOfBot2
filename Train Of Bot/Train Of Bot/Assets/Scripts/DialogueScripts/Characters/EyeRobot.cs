@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class EyeRobot : CharacterDialogue {
 
-
     //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
+    private void Awake()
+    {
+        try
+        {
+            canGiveItem = DataStorage.dataStorage.eyeRobotCanGive;
+        }
+        catch
+        {
+            canGiveItem = true;
+        }
 
+        try
+        {
+            canRecieveItem = DataStorage.dataStorage.eyeRobotCanRecieve;
+        }
+        catch
+        {
+            canRecieveItem = true;
+        }
+    }
 
     void Start()
     {
-        canRecieveItem = true;
-        canGiveItem = true;
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 
@@ -36,7 +52,7 @@ public class EyeRobot : CharacterDialogue {
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
-                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.Plunger)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
@@ -47,13 +63,10 @@ public class EyeRobot : CharacterDialogue {
                         dialogueParameter = 5;
                     }
                 }
-                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Plunger)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveItem = false;
                         break;
                     }
                     else
@@ -72,4 +85,11 @@ public class EyeRobot : CharacterDialogue {
             dialogueParameter = 4;
         }
     }
+
+    private void OnDestroy()
+    {
+        DataStorage.dataStorage.eyeRobotCanRecieve = canRecieveItem;
+        DataStorage.dataStorage.eyeRobotCanGive = canGiveItem;
+    }
+
 }

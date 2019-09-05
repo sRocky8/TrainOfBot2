@@ -5,38 +5,44 @@ using UnityEngine;
 public class Stove : CharacterDialogue {
 
     //Public Variables
-    public bool? canRecieveFMD = true;
-    public bool? canRecieveGasCanister = true;
+    public bool canRecieveFMD = true;
+    public bool canRecieveGasCanister = true;
 
     public GameObject frozenMechanicalDinner;
     public GameObject gasCanister;
     public GameObject cookedMechanicalDinner;
 
     //Private Variables
-
-
-    void Start()
+    private void Awake()
     {
-        canGiveItem = true;
         try
         {
-            if (DataStorage.dataStorage.stoveCanGiveItem != null)
-            {
-                canGiveItem = DataStorage.dataStorage.stoveCanGiveItem;
-            }
-            if (DataStorage.dataStorage.canRecieveFMD != null)
-            {
-                canRecieveFMD = DataStorage.dataStorage.canRecieveFMD;
-            }
-            if (DataStorage.dataStorage.canRecieveGasCanister != null)
-            {
-                canRecieveGasCanister = DataStorage.dataStorage.canRecieveGasCanister;
-            }
+            canGiveItem = DataStorage.dataStorage.tableCanGiveItem;
         }
         catch
         {
-            return;
+            canGiveItem = true;
         }
+        try
+        {
+            canRecieveGasCanister = DataStorage.dataStorage.canRecieveGasCanister;
+        }
+        catch
+        {
+            canRecieveGasCanister = true;
+        }
+        try
+        {
+            canRecieveFMD = DataStorage.dataStorage.canRecieveFMD;
+        }
+        catch
+        {
+            canRecieveFMD = true;
+        }
+    }
+
+    void Start()
+    {
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 
@@ -87,10 +93,6 @@ public class Stove : CharacterDialogue {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveGasCanister = false;
-                        gasCanister.SetActive(true);
                         break;
                     }
                 }
@@ -100,10 +102,6 @@ public class Stove : CharacterDialogue {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveFMD = false;
-                        frozenMechanicalDinner.SetActive(true);
                         break;
                     }
                 }

@@ -4,9 +4,31 @@ using UnityEngine;
 
 public class EarmuffsGuy : CharacterDialogue {
 
-	void Start () {
-        canRecieveItem = true;
-        canGiveItem = true;
+    private void Awake()
+    {
+        try
+        {
+            canGiveItem = DataStorage.dataStorage.earmuffsGuyCanGive;
+        }
+        catch
+        {
+            canGiveItem = true;
+        }
+        Debug.Log(canRecieveItem);
+
+        try
+        {
+            canRecieveItem = DataStorage.dataStorage.earmuffsGuyCanRecieve;
+            Debug.Log(canRecieveItem);
+
+        }
+        catch
+        {
+            canRecieveItem = true;
+        }
+    }
+
+    void Start () {
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 	
@@ -45,9 +67,6 @@ public class EarmuffsGuy : CharacterDialogue {
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = (int)Items.TP;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[(int)Items.TP];
-                        canRecieveItem = false;
                         break;
                     }
                     else
@@ -65,5 +84,11 @@ public class EarmuffsGuy : CharacterDialogue {
         {
             dialogueParameter = 4;
         }
+    }
+
+    private void OnDestroy()
+    {
+        DataStorage.dataStorage.earmuffsGuyCanRecieve = canRecieveItem;
+        DataStorage.dataStorage.earmuffsGuyCanGive = canGiveItem;
     }
 }

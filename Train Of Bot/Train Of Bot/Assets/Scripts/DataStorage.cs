@@ -11,8 +11,11 @@ public class DataStorage : MonoBehaviour {
 
     public float testFloat;
     public Vector3 storageRoomBoxPos;
-    public bool? testCharacterCanRecieve;
-    public bool? testCharacterCanGive;
+    public bool testCharacterCanRecieve;
+    public bool testCharacterCanGive;
+
+    public bool cabinetCanGive;
+    public bool cabinetCanRecieve;
 
     //HAS STUFF BEEN TAKEN?
     public bool bottleOfBoltsTaken;
@@ -27,6 +30,22 @@ public class DataStorage : MonoBehaviour {
     public bool rattleTaken;
     public bool valveTaken;
 
+    //NPCS
+    public bool earmuffsGuyCanGive;
+    public bool earmuffsGuyCanRecieve;
+
+    public bool eyeRobotCanGive;
+    public bool eyeRobotCanRecieve;
+
+    public bool chefCanGive;
+    public bool chefCanRecieve;
+
+    public bool womanRobotCanGive;
+    public bool womanRobotCanRecieve;
+
+    //ROBOT SPECIFIC
+    public bool robotLeftBathroom;
+
     //DOG
     public bool dogEating;
     public Vector3 dogLocation;
@@ -36,14 +55,14 @@ public class DataStorage : MonoBehaviour {
     public bool dinnerActive;
 
     //WORKTABLE
-    public bool? canRecieveChefsSpoon;
-    public bool? canRecieveBottle;
-    public bool? tableCanGiveItem;
+    public bool canRecieveChefsSpoon;
+    public bool canRecieveBottle;
+    public bool tableCanGiveItem;
 
     //STOVE
-    public bool? canRecieveFMD;
-    public bool? canRecieveGasCanister;
-    public bool? stoveCanGiveItem;
+    public bool canRecieveFMD;
+    public bool canRecieveGasCanister;
+    public bool stoveCanGiveItem;
 
     private void Awake()
     {
@@ -74,6 +93,9 @@ public class DataStorage : MonoBehaviour {
         data.testCharacterCanRecieve = true;
         data.testCharacterCanGive = true;
 
+        data.cabinetCanGive = Cabinet.FindObjectOfType<Cabinet>().canGiveItem;
+        data.cabinetCanRecieve = Cabinet.FindObjectOfType<Cabinet>().canRecieveItem;
+
         //ITEMS
         data.bottleOfBoltsTaken = BottleOfBolts.FindObjectOfType<BottleOfBolts>().taken;
         data.cabinetKeyTaken = CabinetKey.FindObjectOfType<CabinetKey>().taken;
@@ -86,6 +108,22 @@ public class DataStorage : MonoBehaviour {
         data.plungerTaken = Plunger.FindObjectOfType<Plunger>().taken;
         data.rattleTaken = Rattle.FindObjectOfType<Rattle>().taken;
         data.valveTaken = Valve.FindObjectOfType<Valve>().taken;
+
+        //NPCS
+        data.earmuffsGuyCanGive = EarmuffsGuy.FindObjectOfType<EarmuffsGuy>().canGiveItem;
+        data.earmuffsGuyCanRecieve = EarmuffsGuy.FindObjectOfType<EarmuffsGuy>().canRecieveItem;
+
+        data.eyeRobotCanGive = EyeRobot.FindObjectOfType<EyeRobot>().canGiveItem;
+        data.eyeRobotCanRecieve = EyeRobot.FindObjectOfType<EyeRobot>().canRecieveItem;
+
+        data.chefCanGive = Chef.FindObjectOfType<Chef>().canGiveItem;
+        data.chefCanRecieve = Chef.FindObjectOfType<Chef>().canRecieveItem;
+
+        data.womanRobotCanGive = WomanRobot.FindObjectOfType<WomanRobot>().canGiveItem;
+        data.womanRobotCanRecieve = WomanRobot.FindObjectOfType<WomanRobot>().canRecieveItem;
+
+        //ROBOT SPECIFIC
+        data.robotLeftBathroom = BathroomRobot.FindObjectOfType<BathroomRobot>().leftBathroom;
 
         //DOG
         data.dogEating = Dog.FindObjectOfType<Dog>().eating;
@@ -141,6 +179,22 @@ public class DataStorage : MonoBehaviour {
             rattleTaken = data.rattleTaken;
             valveTaken = data.valveTaken;
 
+            //NPCS
+            earmuffsGuyCanGive = data.earmuffsGuyCanGive;
+            earmuffsGuyCanRecieve = data.earmuffsGuyCanRecieve;
+
+            eyeRobotCanGive = data.eyeRobotCanGive;
+            eyeRobotCanRecieve = data.eyeRobotCanRecieve;
+
+            chefCanGive = data.chefCanGive;
+            chefCanRecieve = data.chefCanRecieve;
+
+            womanRobotCanGive = data.womanRobotCanGive;
+            womanRobotCanRecieve = data.womanRobotCanRecieve;
+
+            //CHARACTER SPECIFIC
+            robotLeftBathroom = data.robotLeftBathroom;
+
             //DOG
             dogEating = data.dogEating;
             dogLocation = data.dogLocation;
@@ -166,11 +220,13 @@ public class DataStorage : MonoBehaviour {
     {
         //TESTING
         public float testFloat;
-        public bool? testCharacterCanRecieve;
-        public bool? testCharacterCanGive;
+        public bool testCharacterCanRecieve;
+        public bool testCharacterCanGive;
 
         //MISC OBJECTS
         public Vector3 storageRoomBoxPos;
+        public bool cabinetCanGive;
+        public bool cabinetCanRecieve;
 
         //HAS STUFF BEEN TAKEN?
         public bool bottleOfBoltsTaken;
@@ -186,6 +242,20 @@ public class DataStorage : MonoBehaviour {
         public bool valveTaken;
 
         //NPCS
+        public bool earmuffsGuyCanGive;
+        public bool earmuffsGuyCanRecieve;
+
+        public bool eyeRobotCanGive;
+        public bool eyeRobotCanRecieve;
+
+        public bool chefCanGive;
+        public bool chefCanRecieve;
+
+        public bool womanRobotCanGive;
+        public bool womanRobotCanRecieve;
+
+        //CHARACTER SPECIFIC
+        public bool robotLeftBathroom;
 
         //DOG
         public bool dogEating;
@@ -196,13 +266,13 @@ public class DataStorage : MonoBehaviour {
         public bool dinnerActive;
 
         //WORKTABLE
-        public bool? canRecieveChefsSpoon;
-        public bool? canRecieveBottle;
-        public bool? tableCanGiveItem;
+        public bool canRecieveChefsSpoon;
+        public bool canRecieveBottle;
+        public bool tableCanGiveItem;
 
         //STOVE
-        public bool? canRecieveFMD;
-        public bool? canRecieveGasCanister;
-        public bool? stoveCanGiveItem;
+        public bool canRecieveFMD;
+        public bool canRecieveGasCanister;
+        public bool stoveCanGiveItem;
     }
 }

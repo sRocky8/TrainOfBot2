@@ -7,43 +7,54 @@ public class Worktable : CharacterDialogue {
     //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
 
     //Public Variables
-    public bool? canRecieveChefsSpoon = true;
-    public bool? canRecieveBottle = true;
+    public bool canRecieveChefsSpoon = true;
+    public bool canRecieveBottle = true;
 
     public GameObject chefsSpoon;
     public GameObject bottle;
     public GameObject rattle;
 
     //Private Variables
-
-    
-    void Start()
+    private void Awake()
     {
-        canGiveItem = true;
         try
         {
-            if (DataStorage.dataStorage.tableCanGiveItem != null)
-            {
-                canGiveItem = DataStorage.dataStorage.tableCanGiveItem;
-            }
-            if (DataStorage.dataStorage.canRecieveChefsSpoon != null)
-            {
-                canRecieveChefsSpoon = DataStorage.dataStorage.canRecieveChefsSpoon;
-            }
-            if (DataStorage.dataStorage.canRecieveBottle != null)
-            {
-                canRecieveBottle = DataStorage.dataStorage.canRecieveBottle;
-            }
+            canGiveItem = DataStorage.dataStorage.tableCanGiveItem;
         }
         catch
         {
-            return;
+            canGiveItem = true;
         }
+        try
+        {
+            canRecieveBottle = DataStorage.dataStorage.canRecieveBottle;
+        }
+        catch
+        {
+            canRecieveBottle = true;
+        }
+        try
+        {
+            canRecieveChefsSpoon = DataStorage.dataStorage.canRecieveChefsSpoon;
+        }
+        catch
+        {
+            canRecieveChefsSpoon = true;
+        }
+    }
+
+    void Start()
+    {
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 
     void Update()
     {
+        if (canRecieveBottle == false)
+        {
+            Debug.Log("bottle of bolts aquired");
+        }
+        //Debug.Log("chefs sppon aquired");
         CheckDialogueParam();
         TalkWithNPC();
     }
@@ -89,10 +100,6 @@ public class Worktable : CharacterDialogue {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveBottle = false;
-                        bottle.SetActive(true);
                         break;
                     }
                 }
@@ -102,10 +109,6 @@ public class Worktable : CharacterDialogue {
                     dialogueParameter = 2;
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveChefsSpoon = false;
-                        chefsSpoon.SetActive(true);
                         break;
                     }
                 }

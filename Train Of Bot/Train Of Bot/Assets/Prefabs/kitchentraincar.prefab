@@ -152,6 +152,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1271912673757904
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4926923796103834}
+  - component: {fileID: 33630131595680630}
+  - component: {fileID: 23304305023482952}
+  - component: {fileID: 65515642105735770}
+  - component: {fileID: 114904919555304478}
+  m_Layer: 0
+  m_Name: FindPlayer
+  m_TagString: StoveCode
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1330967436940904
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,9 +645,10 @@ GameObject:
   - component: {fileID: 23467339712784998}
   - component: {fileID: 95009801997677672}
   - component: {fileID: 65342162562408014}
-  m_Layer: 0
+  - component: {fileID: 114171844011074466}
+  m_Layer: 11
   m_Name: Mech Meat Textured
-  m_TagString: Untagged
+  m_TagString: CookedMechanicalDinner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -810,6 +830,7 @@ Transform:
   m_LocalScale: {x: 7.5203266, y: 4.2288, z: 0.9552782}
   m_Children:
   - {fileID: 4062631138370312}
+  - {fileID: 4926923796103834}
   m_Father: {fileID: 4089195207096846}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -1128,6 +1149,19 @@ Transform:
   m_Father: {fileID: 4298600947134914}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!4 &4926923796103834
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271912673757904}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -0.152, y: 0.20396347, z: 1.52}
+  m_LocalScale: {x: 0.70355076, y: 1.278708, z: 2.8885832}
+  m_Children: []
+  m_Father: {fileID: 4307689096479286}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4944671560350966
 Transform:
   m_ObjectHideFlags: 1
@@ -1161,7 +1195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972011575169192}
   m_LocalRotation: {x: -0.4190544, y: -0.4190544, z: -0.56955546, w: 0.56955546}
-  m_LocalPosition: {x: -771.50037, y: 278.6, z: 4907.0967}
+  m_LocalPosition: {x: -800, y: 279, z: 4907}
   m_LocalScale: {x: 999.99945, y: 999.99976, z: 1000.00006}
   m_Children: []
   m_Father: {fileID: 4062631138370312}
@@ -1418,6 +1452,41 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1910938630673836}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23304305023482952
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271912673757904}
   m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2497,6 +2566,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372642009505282}
   m_Mesh: {fileID: 4300002, guid: 67ada6e3d57b0a747a8912a4460dcebc, type: 3}
+--- !u!33 &33630131595680630
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271912673757904}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33823257835976124
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2635,8 +2711,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21577007, y: 0.039936956, z: 0.3240789}
-  m_Center: {x: -0.04356102, y: 0.00028679252, z: 0.021773838}
+  m_Size: {x: 0.6650142, y: 0.039936956, z: 0.3240789}
+  m_Center: {x: -0.26818225, y: 0.00028683987, z: 0.021773903}
 --- !u!65 &65378950884871580
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2657,6 +2733,18 @@ BoxCollider:
   m_GameObject: {fileID: 1564547840740844}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65515642105735770
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271912673757904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2763,6 +2851,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114171844011074466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1972011575169192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e74db34e9e1ed14298bcb530be86af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taken: 0
 --- !u!114 &114175821311820050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2776,6 +2876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endedDialogue: 0
   inConversation: 0
+  find: {fileID: 1271912673757904}
   rayMaxDistance: 3
   dialogueParameter: 0
   npcDialogue:
@@ -2802,9 +2903,22 @@ MonoBehaviour:
     - parameterDescription: Take no item.
       linesOfDialogue:
       - I already got the cooked food...
+  lookingAtPlayer: 0
   frozenMechanicalDinner: {fileID: 1077607411364214}
   gasCanister: {fileID: 1965380683674590}
   cookedMechanicalDinner: {fileID: 1972011575169192}
+--- !u!114 &114904919555304478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271912673757904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d81d6a4b1288429232c06104063f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seesPlayer: 0
 --- !u!136 &136505652720045528
 CapsuleCollider:
   m_ObjectHideFlags: 1

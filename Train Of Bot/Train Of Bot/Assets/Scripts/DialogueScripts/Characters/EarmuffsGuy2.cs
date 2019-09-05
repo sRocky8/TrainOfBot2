@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WomanRobot : CharacterDialogue {
+public class EarmuffsGuy2 : CharacterDialogue {
 
-
-    //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
     private void Awake()
     {
         try
         {
-            canGiveItem = DataStorage.dataStorage.womanRobotCanGive;
+            canGiveItem = DataStorage.dataStorage.earmuffsGuyCanGive;
         }
         catch
         {
             canGiveItem = true;
         }
-
+        Debug.Log(canRecieveItem);
         try
         {
-            canRecieveItem = DataStorage.dataStorage.womanRobotCanRecieve;
+            canRecieveItem = DataStorage.dataStorage.earmuffsGuyCanRecieve;
+            Debug.Log(canRecieveItem);
         }
         catch
         {
@@ -68,9 +67,6 @@ public class WomanRobot : CharacterDialogue {
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveItem = false;
                         break;
                     }
                     else
@@ -92,7 +88,7 @@ public class WomanRobot : CharacterDialogue {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.womanRobotCanRecieve = canRecieveItem;
-        DataStorage.dataStorage.womanRobotCanGive = canGiveItem;
+        DataStorage.dataStorage.earmuffsGuyCanRecieve = canRecieveItem;
+        DataStorage.dataStorage.earmuffsGuyCanGive = canGiveItem;
     }
 }

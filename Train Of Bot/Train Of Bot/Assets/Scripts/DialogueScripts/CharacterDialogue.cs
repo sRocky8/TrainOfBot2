@@ -7,13 +7,14 @@ public class CharacterDialogue : MonoBehaviour {
     //Public Variables
     [HideInInspector] public bool endedDialogue;
     [HideInInspector] public bool inConversation;
-    [HideInInspector] public bool? canGiveItem;
-    [HideInInspector] public bool? canRecieveItem;
+    [HideInInspector] public bool canGiveItem;
+     public bool canRecieveItem = true; //[HideInInspector]
+    public GameObject find;
     public float rayMaxDistance;
     public int dialogueParameter;
     public DialogueClass npcDialogue;
 
-    [HideInInspector]public bool lookingAtPlayer;
+    public bool lookingAtPlayer; //[HideInInspector]
 
     //Protected Variables
     protected RaycastHit hit;
@@ -59,7 +60,7 @@ public class CharacterDialogue : MonoBehaviour {
         playerInventoryNum = FindObjectOfType<PlayerController>().inventoryCursorPos;
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
 
-        RaycastForPlayer();
+        CheckCollisionForPlayer();
 
         if (inConversation == true && Input.GetKeyDown(KeyCode.Space))
         {
@@ -68,7 +69,7 @@ public class CharacterDialogue : MonoBehaviour {
 
         if (lookingAtPlayer == true)
         {
-            if (inConversation == false && playerLooking == true)
+            if (inConversation == false && playerLooking == true) //
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -88,7 +89,7 @@ public class CharacterDialogue : MonoBehaviour {
                             return;
                         }
                     }
-                    else if (playerMenuNum != 2)
+                    else if (playerMenuNum != 2 && playerInMenu == true)
                     {
                         ActivateDialogue();
                     }
@@ -108,6 +109,19 @@ public class CharacterDialogue : MonoBehaviour {
         //{
         //    dialogueParameter = 0;
         //}
+    }
+
+    protected void CheckCollisionForPlayer()
+    {
+        if (find.GetComponent<FindPlayer>().seesPlayer == true)
+        {
+            Debug.Log("hit Player");
+            lookingAtPlayer = true;
+        }
+        else
+        {
+            lookingAtPlayer = false;
+        }
     }
 
     protected void RaycastForPlayer()

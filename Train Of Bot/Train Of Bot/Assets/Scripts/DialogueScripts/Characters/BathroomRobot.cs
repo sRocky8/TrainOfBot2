@@ -2,33 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WomanRobot : CharacterDialogue {
+public class BathroomRobot : CharacterDialogue {
 
+    public bool leftBathroom;
 
-    //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
     private void Awake()
     {
         try
         {
-            canGiveItem = DataStorage.dataStorage.womanRobotCanGive;
-        }
-        catch
-        {
-            canGiveItem = true;
-        }
+            leftBathroom = DataStorage.dataStorage.robotLeftBathroom;
 
-        try
-        {
-            canRecieveItem = DataStorage.dataStorage.womanRobotCanRecieve;
+            if (leftBathroom == true)
+            {
+                Destroy(gameObject);
+            }
         }
         catch
         {
-            canRecieveItem = true;
+            leftBathroom = false;
         }
     }
 
     void Start()
     {
+        canRecieveItem = true;
+        canGiveItem = true;
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 
@@ -53,7 +51,7 @@ public class WomanRobot : CharacterDialogue {
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
-                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.TP)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
@@ -61,16 +59,13 @@ public class WomanRobot : CharacterDialogue {
                     }
                     else
                     {
-                        dialogueParameter = 5;
+                        dialogueParameter = 3;
                     }
                 }
-                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.TP)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveItem = false;
                         break;
                     }
                     else
@@ -80,19 +75,10 @@ public class WomanRobot : CharacterDialogue {
                 }
             }
         }
-        else if (playerMenuNum == 0 && canRecieveItem == false)
-        {
-            dialogueParameter = 3;
-        }
-        else if (playerMenuNum == 1 && canRecieveItem == false)
-        {
-            dialogueParameter = 4;
-        }
     }
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.womanRobotCanRecieve = canRecieveItem;
-        DataStorage.dataStorage.womanRobotCanGive = canGiveItem;
+        DataStorage.dataStorage.robotLeftBathroom = leftBathroom;
     }
 }

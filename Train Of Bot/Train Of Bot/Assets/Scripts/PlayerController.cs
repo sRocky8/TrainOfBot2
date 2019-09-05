@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour {
     public Animator fade;
 
     public bool stopPlayer;
+    
 
     //Private Variables
     //    private bool canMoveRight;
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour {
     private RectTransform inventoryChoice;
     private bool moving;
     private bool canMove;
+    private bool toiletFadePlayed;
 
     private void Awake()
     {
@@ -112,6 +114,7 @@ public class PlayerController : MonoBehaviour {
         inMenu = false;
         inInventory = false;
         givingItem = false;
+        toiletFadePlayed = false;
 
         for(int i = 0; i < inventory.Length; i++)
         {
@@ -521,27 +524,92 @@ public class PlayerController : MonoBehaviour {
 
             }
 
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayMaxDistance, layerMask1))
-            {
-                Debug.Log("Player Looking at NPC");
-                WhatDialogueClass(hit);
-                lookingAtSpeaker = true;
-            }
-            else
-            {
-                lookingAtSpeaker = false;
+            if(DataStorage.dataStorage.robotLeftBathroom == true && toiletFadePlayed == false) {
+                toiletFadePlayed = true;
+                Debug.Log("Fade out coroutine?");
+                StartCoroutine(FadeOutCoRoutine("Residence"));
+                Debug.Log("Fade out coroutine started");
+                if (fade.GetBool("FadingOut") == false)
+                {
+                    Debug.Log("Fade in coroutine?");
+                    StartCoroutine(FadeInCoRoutine());
+                    Debug.Log("Fade in coroutine success");
+                }
             }
         }
     }
 
-    private void FixedUpdate()
-    {
-
-    }
-
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "EarmuffsGuy")
+        {
+            inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGive((int)Items.Earmuffs, (int)Items.TP, other, FindObjectOfType<EarmuffsGuy>().canRecieveItem);
+        }
+        else if (other.tag == "Mom")
+        {
+            inConversation = other.transform.parent.GetComponent<WomanRobot>().inConversation;
+            lookingAtSpeaker = true;
+        }
+        else if (other.tag == "Boy")
+        {
+            //inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            //lookingAtSpeaker = true;
+        }
+        else if (other.tag == "Chef")
+        {
+            inConversation = other.transform.parent.GetComponent<Chef>().inConversation;
+            lookingAtSpeaker = true;
+        }
+        else if (other.tag == "ToiletMan")
+        {
+            if (FindObjectOfType<BathroomRobot>().leftBathroom == true)
+            {
+                inConversation = false;
+            }
+            inConversation = other.transform.parent.GetComponent<BathroomRobot>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGive((int)Items.TP, (int)Items.Nothing, other, FindObjectOfType<BathroomRobot>().canRecieveItem);
+        }
+        else if (other.tag == "EyeRobot")
+        {
+            inConversation = other.transform.parent.GetComponent<EyeRobot>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGive((int)Items.Plunger, (int)Items.PassengersEye, other, FindObjectOfType<EyeRobot>().canRecieveItem);
+        }
+        else if (other.tag == "Main_Char_Model")
+        {
+            inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            lookingAtSpeaker = true;
+        }
+        else if (other.tag == "Cabinet")
+        {
+            inConversation = other.transform.parent.GetComponent<Cabinet>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGive((int)Items.CabinetKey, (int)Items.GasCanister, other, FindObjectOfType<Cabinet>().canRecieveItem);
+        }
+        else if (other.tag == "Worktable")
+        {
+            inConversation = other.transform.parent.GetComponent<Worktable>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGiveExtra((int)Items.BottleOfBolts, (int)Items.ChefsSpoon, (int)Items.Nothing, 
+                FindObjectOfType<Worktable>().canRecieveBottle, FindObjectOfType<Worktable>().canRecieveChefsSpoon,
+                FindObjectOfType<Worktable>().bottle, FindObjectOfType<Worktable>().chefsSpoon);
+        }
+        else if (other.tag == "StoveCode")
+        {
+            inConversation = other.transform.parent.GetComponent<Stove>().inConversation;
+            lookingAtSpeaker = true;
+            CheckForItemGiveExtra((int)Items.GasCanister, (int)Items.FrozenMechanicalDinner, (int)Items.Nothing, 
+                FindObjectOfType<Stove>().canRecieveGasCanister, FindObjectOfType<Stove>().canRecieveFMD,
+                FindObjectOfType<Stove>().gasCanister, FindObjectOfType<Stove>().frozenMechanicalDinner);
+        }
+        else
+        {
+            lookingAtSpeaker = false;
+        }
+
         if (canMove == true)
         {
             if (other.tag == "NextScene" && inMenu == false)
@@ -590,6 +658,55 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "EarmuffsGuy")
+        {
+            inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "Mom")
+        {
+            inConversation = other.transform.parent.GetComponent<WomanRobot>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "Boy")
+        {
+            //inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            //lookingAtSpeaker = false;
+        }
+        else if (other.tag == "Chef")
+        {
+            inConversation = other.transform.parent.GetComponent<Chef>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "ToiletMan")
+        {
+            inConversation = other.transform.parent.GetComponent<BathroomRobot>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "EyeRobot")
+        {
+            inConversation = other.transform.parent.GetComponent<EyeRobot>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "Main_Char_Model")
+        {
+            inConversation = other.transform.parent.GetComponent<EarmuffsGuy>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "Worktable")
+        {
+            inConversation = other.transform.parent.GetComponent<Worktable>().inConversation;
+            lookingAtSpeaker = false;
+        }
+        else if (other.tag == "StoveCode")
+        {
+            inConversation = other.transform.parent.GetComponent<Stove>().inConversation;
+            lookingAtSpeaker = false;
+        }
+    }
+
     private void CheckForZeros()
     {
         //int itemToNumber = (int)item;
@@ -603,6 +720,73 @@ public class PlayerController : MonoBehaviour {
             else
             {
                 fullInventory = true;
+            }
+        }
+    }
+
+    private void CheckForItemGive(int itemGiving, int itemRecieving, Collider other, bool canRecieveItem)
+    {
+        if (highlightedPos == 2 && inInventory == true) {
+            for (int i = 0; i < inventorySlot.Length; i++)
+            {
+                if (inventoryCursorPos == i && inventorySlot[i] == itemGiving)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        canRecieveItem = false;
+                        inventorySlot[i] = itemRecieving;
+                        inventory[i].sprite = inventoryImage[itemRecieving];
+
+                        Debug.Log("Gave and recieved item");
+                        if (other.tag == "ToiletMan")
+                        {
+                            Debug.Log("toiletman??????");
+                            if (FindObjectOfType<BathroomRobot>().dialogueParameter == 2 && FindObjectOfType<BathroomRobot>().endedDialogue == true)
+                            {
+                                Debug.Log("starting coroutine");
+                                StartCoroutine(WaitForDialogueToFinishCoRoutine(other));
+                            }
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void CheckForItemGiveExtra(int itemGivingOne, int itemGivingTwo, int itemRecieving, bool canRecieveItemOne, bool canRecieveItemTwo, GameObject gameObjectItemOne, GameObject gameObjectItemTwo)
+    {
+        if (highlightedPos == 2 && inInventory == true)
+        {
+            for (int i = 0; i < inventorySlot.Length; i++)
+            {
+                if (inventoryCursorPos == i && inventorySlot[i] == itemGivingOne)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        canRecieveItemOne = false;
+                        inventorySlot[i] = itemRecieving;
+                        inventory[i].sprite = inventoryImage[itemRecieving];
+                        gameObjectItemOne.SetActive(true);
+                        break;
+                    }
+                }
+
+                if (inventoryCursorPos == i && inventorySlot[i] == itemGivingTwo)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        canRecieveItemTwo = false;
+                        inventorySlot[i] = itemRecieving;
+                        inventory[i].sprite = inventoryImage[itemRecieving];
+                        gameObjectItemTwo.SetActive(true);
+                        break;
+                    }
+                }
             }
         }
     }
@@ -686,6 +870,7 @@ public class PlayerController : MonoBehaviour {
             }
             if (itemHit.transform.tag.Equals("CookedMechanicalDinner"))
             {
+                Debug.Log("Hit CMD");
                 for (int i = 0; i < inventorySlot.Length; i++)
                 {
                     if (inventorySlot[i] == 0)
@@ -775,46 +960,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void WhatDialogueClass(RaycastHit hit)
-    {
-        if (hit.transform.name == "EarmuffsGuy")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
-        }
-        else if (hit.transform.name == "Mom")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<WomanRobot>().inConversation;
-        }
-        else if (hit.transform.name == "Boy")
-        {
-            //inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
-        }
-        else if (hit.transform.name == "Chef")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<Chef>().inConversation;
-        }
-        else if (hit.transform.name == "ToiletMan")
-        {
-            //inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
-        }
-        else if (hit.transform.name == "Main_Char_Model")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<EarmuffsGuy>().inConversation;
-        }
-        else if(hit.transform.name == "Worktable")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<Worktable>().inConversation;
-        }
-        else if (hit.transform.name == "StoveCode")
-        {
-            inConversation = hit.collider.gameObject.GetComponent<Stove>().inConversation;
-        }
-        else
-        {
-            return;
-        }
-    }
-
     private void CloseInventoryMenu()
     {
         inMenu = false;
@@ -825,6 +970,18 @@ public class PlayerController : MonoBehaviour {
         inventoryCursorPos = 0;
     }
 
+    private IEnumerator WaitForDialogueToFinishCoRoutine(Collider other)
+    {
+        yield return new WaitUntil(() => FindObjectOfType<BathroomRobot>().endedDialogue == false);
+        yield return new WaitUntil(() => FindObjectOfType<BathroomRobot>().endedDialogue == true);
+        FindObjectOfType<BathroomRobot>().inConversation = false;
+        inConversation = false;
+        FindObjectOfType<BathroomRobot>().leftBathroom = true;
+        Destroy(other.transform.parent.gameObject);
+        Debug.Log("finished coroutine");
+    }
+
+    //SCENE STUFF
     private IEnumerator FadeInCoRoutine()
     {
         playerAnimator.Play("Idle");

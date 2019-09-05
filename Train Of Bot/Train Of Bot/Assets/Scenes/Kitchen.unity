@@ -240,6 +240,7 @@ MonoBehaviour:
   plungerTaken: 0
   rattleTaken: 0
   valveTaken: 0
+  robotLeftBathroom: 0
   dogEating: 0
   dogLocation: {x: 0, y: 0, z: 0}
   bowlHasFood: 0

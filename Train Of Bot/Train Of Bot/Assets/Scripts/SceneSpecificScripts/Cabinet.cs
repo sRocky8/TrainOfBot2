@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WomanRobot : CharacterDialogue {
+public class Cabinet : CharacterDialogue {
 
-
-    //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
     private void Awake()
     {
         try
         {
-            canGiveItem = DataStorage.dataStorage.womanRobotCanGive;
+            canGiveItem = DataStorage.dataStorage.cabinetCanGive;
         }
         catch
         {
@@ -19,7 +17,7 @@ public class WomanRobot : CharacterDialogue {
 
         try
         {
-            canRecieveItem = DataStorage.dataStorage.womanRobotCanRecieve;
+            canRecieveItem = DataStorage.dataStorage.cabinetCanRecieve;
         }
         catch
         {
@@ -53,7 +51,7 @@ public class WomanRobot : CharacterDialogue {
         {
             for (int i = 0; i < playerInventorySlot.Length; i++)
             {
-                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] != (int)Items.CabinetKey)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
@@ -64,13 +62,10 @@ public class WomanRobot : CharacterDialogue {
                         dialogueParameter = 5;
                     }
                 }
-                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
+                if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.CabinetKey)
                 {
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
-                        FindObjectOfType<PlayerController>().inventorySlot[i] = 0;
-                        FindObjectOfType<PlayerController>().inventory[i].sprite = FindObjectOfType<PlayerController>().inventoryImage[0];
-                        canRecieveItem = false;
                         break;
                     }
                     else
@@ -92,7 +87,7 @@ public class WomanRobot : CharacterDialogue {
 
     private void OnDestroy()
     {
-        DataStorage.dataStorage.womanRobotCanRecieve = canRecieveItem;
-        DataStorage.dataStorage.womanRobotCanGive = canGiveItem;
+        DataStorage.dataStorage.cabinetCanRecieve = canRecieveItem;
+        DataStorage.dataStorage.cabinetCanGive = canGiveItem;
     }
 }

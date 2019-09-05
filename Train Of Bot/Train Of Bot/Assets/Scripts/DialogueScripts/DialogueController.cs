@@ -14,8 +14,6 @@ public class DialogueController : MonoBehaviour {
 
     //Private Variables
     private Queue<string> linesOfDialogue;
-//    private int currentScene;
-//    private int lastScene;
     private GameObject npcNameTextGameObject;
     private GameObject npcDialogueTextGameObject;
 
@@ -23,14 +21,11 @@ public class DialogueController : MonoBehaviour {
         linesOfDialogue = new Queue<string>();
 
         endedDialogue = true;
-//        currentScene = SceneManager.GetActiveScene().buildIndex;
-//        lastScene = currentScene;
     }
 
     void Update()
     {
-//        currentScene = SceneManager.GetActiveScene().buildIndex;
-//        lastScene = currentScene;
+
     }
 
     public void StartDialogue(DialogueClass npcDialogue, int dialogueParameter)

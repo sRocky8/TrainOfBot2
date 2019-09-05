@@ -317,6 +317,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 81311470}
   m_Mesh: {fileID: 4300000, guid: 8d0a769b752c4df478db27f85deac28c, type: 3}
+--- !u!1 &95313823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95313826}
+  - component: {fileID: 95313825}
+  - component: {fileID: 95313824}
+  m_Layer: 0
+  m_Name: FindPlayer
+  m_TagString: EyeRobot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &95313824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95313823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d81d6a4b1288429232c06104063f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seesPlayer: 0
+--- !u!65 &95313825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95313823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &95313826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 95313823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.175, y: 1.55, z: 0}
+  m_LocalScale: {x: 1, y: 4, z: 2.3537}
+  m_Children: []
+  m_Father: {fileID: 1283852596}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &137641165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,6 +2319,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testFloat: 0
   storageRoomBoxPos: {x: 12.68865, y: -9.108707, z: 14.47236}
+  testCharacterCanRecieve: 0
+  testCharacterCanGive: 0
+  cabinetCanGive: 0
+  cabinetCanRecieve: 0
   bottleOfBoltsTaken: 0
   cabinetKeyTaken: 0
   chefsSpoonTaken: 0
@@ -2276,10 +2334,25 @@ MonoBehaviour:
   plungerTaken: 0
   rattleTaken: 0
   valveTaken: 0
+  earmuffsGuyCanGive: 0
+  earmuffsGuyCanRecieve: 0
+  eyeRobotCanGive: 0
+  eyeRobotCanRecieve: 0
+  chefCanGive: 0
+  chefCanRecieve: 0
+  womanRobotCanGive: 0
+  womanRobotCanRecieve: 0
+  robotLeftBathroom: 0
   dogEating: 0
   dogLocation: {x: 0, y: 0, z: 0}
   bowlHasFood: 0
   dinnerActive: 0
+  canRecieveChefsSpoon: 0
+  canRecieveBottle: 0
+  tableCanGiveItem: 0
+  canRecieveFMD: 0
+  canRecieveGasCanister: 0
+  stoveCanGiveItem: 0
 --- !u!4 &973324218
 Transform:
   m_ObjectHideFlags: 0
@@ -2579,6 +2652,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1034856104}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1099720178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099720179}
+  - component: {fileID: 1099720180}
+  - component: {fileID: 1099720181}
+  m_Layer: 9
+  m_Name: FindPlayer
+  m_TagString: ToiletMan
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099720179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099720178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: -2.68}
+  m_LocalScale: {x: 2, y: 3.4, z: 1.75}
+  m_Children: []
+  m_Father: {fileID: 1492514660}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1099720180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099720178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1099720181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099720178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d81d6a4b1288429232c06104063f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seesPlayer: 0
 --- !u!1 &1109412973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,9 +2907,117 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a0cb2b9bde296084085aa11cc52e5a5e, type: 2}
+    - target: {fileID: 100000, guid: 479f7838bb00f1145842660ae7b729dc, type: 3}
+      propertyPath: m_TagString
+      value: EyeRobot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479f7838bb00f1145842660ae7b729dc, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1283852595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 479f7838bb00f1145842660ae7b729dc,
+    type: 3}
+  m_PrefabInternal: {fileID: 1283852594}
+--- !u!4 &1283852596 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 479f7838bb00f1145842660ae7b729dc,
+    type: 3}
+  m_PrefabInternal: {fileID: 1283852594}
+--- !u!114 &1283852597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283852595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e65b181c45ca7448f863e5d4a363e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endedDialogue: 0
+  inConversation: 0
+  canGiveItem: 0
+  canRecieveItem: 0
+  find: {fileID: 95313823}
+  rayMaxDistance: 0
+  dialogueParameter: 0
+  npcDialogue:
+    npcName: Eye Robot
+    dialogueAmount:
+    - parameterDescription: Beep
+      linesOfDialogue:
+      - "AH! What? You think this train\u2019s going p-p-pretty fast too, r-right?"
+      - "Of COURSE they g-gave me a window s-seat. This eye of m-mine doesn\u2019t
+        b-b-blink, ya know!"
+      - "You can call it an overs-s-s-sight\u2026.heh...g-get it?"
+      - "I think I\u2019m gonna be s-s-sick."
+    - parameterDescription: Take
+      linesOfDialogue:
+      - T-There has to be some way to stop th-th-this horror!
+    - parameterDescription: Give
+      linesOfDialogue:
+      - "Hahaha! Wow! I can\u2019t see a thing!"
+      - RECIEVED EYE
+      - "Thanks man, just return it when you\u2019re done doing...uh...whatever it
+        is that you\u2019re doing."
+    - parameterDescription: Beep 2
+      linesOfDialogue:
+      - "Hello? I can\u2019t see so whoever you are, please be accomodating."
+    - parameterDescription: Take 2
+      linesOfDialogue:
+      - Who are you and why are you pulling on my arm?
+    - parameterDescription: Give 2
+      linesOfDialogue:
+      - I don't know what you have there but it's not needed.
+  lookingAtPlayer: 0
+--- !u!114 &1283852598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283852595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07620c5686f256e4997beb55b62a86e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endedDialogue: 0
+  inConversation: 0
+  canGiveItem: 0
+  canRecieveItem: 1
+  find: {fileID: 95313823}
+  rayMaxDistance: 0
+  dialogueParameter: 0
+  npcDialogue:
+    npcName: Eye Robot
+    dialogueAmount:
+    - parameterDescription: Beep
+      linesOfDialogue:
+      - "AH! What? You think this train\u2019s going p-p-pretty fast too, r-right?"
+      - "Of COURSE they g-gave me a window s-seat. This eye of m-mine doesn\u2019t
+        b-b-blink, ya know!"
+      - "You can call it an overs-s-s-sight\u2026.heh...g-get it?"
+      - "I think I\u2019m gonna be s-s-sick."
+    - parameterDescription: Take
+      linesOfDialogue:
+      - T-There has to be some way to stop th-th-this horror!
+    - parameterDescription: Give
+      linesOfDialogue:
+      - "Hahaha! Wow! I can\u2019t see a thing!"
+      - RECIEVED EYE
+      - "Thanks man, just return it when you\u2019re done doing...uh...whatever it
+        is that you\u2019re doing."
+    - parameterDescription: Beep 2
+      linesOfDialogue:
+      - "Hello? I can\u2019t see so whoever you are, please be accomodating."
+    - parameterDescription: Take 2
+      linesOfDialogue:
+      - Who are you and why are you pulling on my arm?
+    - parameterDescription: Give 2
+      linesOfDialogue:
+      - I don't know what you have there but it's not needed.
+  lookingAtPlayer: 0
 --- !u!1001 &1296866697
 Prefab:
   m_ObjectHideFlags: 0
@@ -3588,6 +3823,135 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1469615182}
   m_Mesh: {fileID: 4300006, guid: 3dedf20601946fd4cb33372da047a350, type: 3}
+--- !u!1 &1492514656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492514660}
+  - component: {fileID: 1492514659}
+  - component: {fileID: 1492514658}
+  - component: {fileID: 1492514657}
+  - component: {fileID: 1492514661}
+  m_Layer: 9
+  m_Name: HiddenBathroomRobot
+  m_TagString: ToiletMan
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1492514657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492514656}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1492514658
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492514656}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1492514659
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492514656}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1492514660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492514656}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.63, y: -9.431, z: 18.411175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1099720179}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1492514661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492514656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e447e29e54040a442acd4dbf6f327240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endedDialogue: 0
+  inConversation: 0
+  canGiveItem: 0
+  canRecieveItem: 0
+  find: {fileID: 1099720178}
+  rayMaxDistance: 0
+  dialogueParameter: 0
+  npcDialogue:
+    npcName: Toilet Man
+    dialogueAmount:
+    - parameterDescription: Beep
+      linesOfDialogue:
+      - '*knock* *knock*'
+      - Just my luck, man. Like, why does this always happen?
+      - "Hey dude, there\u2019s like, no more Turbohydrollic Priming in here!"
+      - "You know, T.P.? It\u2019s like, essential."
+      - Some rustbucket probably like, ran off with it or somethin.
+      - Totally not cool, man.
+    - parameterDescription: Take
+      linesOfDialogue:
+      - Sorry bro, but finding T.P. is like, my priority for now.
+    - parameterDescription: Give Correct
+      linesOfDialogue:
+      - Dude! You like, totally found some T.P.
+      - "I\u2019m feeling all primed and ready to go now, man. Righteous!"
+      - Now I can get back to my work in the engine room. Thanks again, dude!
+    - parameterDescription: Give Wrong
+      linesOfDialogue:
+      - Aww man, you got me. Good one dude.
+  lookingAtPlayer: 0
+  leftBathroom: 0
 --- !u!1 &1509930851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +4144,7 @@ GameObject:
   - component: {fileID: 1560049162}
   - component: {fileID: 1560049161}
   - component: {fileID: 1560049160}
+  - component: {fileID: 1560049163}
   m_Layer: 0
   m_Name: BathroomScene
   m_TagString: ToBathroom
@@ -3810,7 +4175,7 @@ BoxCollider:
   m_GameObject: {fileID: 1560049158}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3858,6 +4223,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1560049158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1560049163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560049158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafcd39d17b113f4181116224169918a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1566555187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4594,60 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1661072578}
   m_Mesh: {fileID: 4300000, guid: 19a04a19d6ee0dd489a34e4fa85859b7, type: 3}
+--- !u!1 &1667882128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667882129}
+  - component: {fileID: 1667882131}
+  - component: {fileID: 1667882130}
+  m_Layer: 0
+  m_Name: FindPlayer
+  m_TagString: EarmuffsGuy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667882129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667882128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.62, z: 1.94}
+  m_LocalScale: {x: 3.0752, y: 4.5817, z: 2.038}
+  m_Children: []
+  m_Father: {fileID: 2016302141}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667882130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667882128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d81d6a4b1288429232c06104063f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seesPlayer: 0
+--- !u!65 &1667882131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1667882128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1699986135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5473,12 +5903,20 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 7b93139ab026aee44884e9ea19f0d15c, type: 2}
     - target: {fileID: 100022, guid: fef6eba976980554085f938d0d5e4b72, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: fef6eba976980554085f938d0d5e4b72, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: be33d0dc6ec0a9e4d9bbc8e1dd9847eb, type: 2}
+    - target: {fileID: 100022, guid: fef6eba976980554085f938d0d5e4b72, type: 3}
+      propertyPath: m_Name
+      value: EarmuffsGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: fef6eba976980554085f938d0d5e4b72, type: 3}
+      propertyPath: m_TagString
+      value: EarmuffsGuy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef6eba976980554085f938d0d5e4b72, type: 3}
   m_IsPrefabAsset: 0
@@ -5493,14 +5931,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016302137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 068991399dd57124caa94bd955fed0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   endedDialogue: 0
   inConversation: 0
-  rayMaxDistance: 2
+  canGiveItem: 0
+  canRecieveItem: 1
+  find: {fileID: 1667882128}
+  rayMaxDistance: 0
   dialogueParameter: 0
   npcDialogue:
     npcName: Trumpet Robot
@@ -5553,6 +5994,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400022, guid: fef6eba976980554085f938d0d5e4b72,
     type: 3}
   m_PrefabInternal: {fileID: 2016302136}
+--- !u!114 &2016302142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016302137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0ea867fdcc4af4abc3cf6818a7647e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endedDialogue: 0
+  inConversation: 0
+  canGiveItem: 0
+  canRecieveItem: 1
+  find: {fileID: 1667882128}
+  rayMaxDistance: 0
+  dialogueParameter: 0
+  npcDialogue:
+    npcName: Trumpet Robot
+    dialogueAmount:
+    - parameterDescription: Beep no earmuffs
+      linesOfDialogue:
+      - 'THIS TRAIN IS TO LOUD!
+
+        MAKE IT STOP!'
+    - parameterDescription: Take no earmuffs
+      linesOfDialogue:
+      - I HAVE NOTHING TO GIVE YOU!
+      - NOW SHOO IF YOU CAN'T STOP THIS HORRIBLE NOISE!
+    - parameterDescription: give earmuffs
+      linesOfDialogue:
+      - Thank you! now I can finally hear the silence!
+      - Wait is that even possible?
+      - Either way, you can have this toilet paper.
+      - I tried stuffing my ears with it but the squares started going down my ear
+        tubes.
+      - RECIEVED TOILET PAPER
+    - parameterDescription: beep given earmuffs
+      linesOfDialogue:
+      - What!?
+      - I can't hear you!
+      - It's so quiet!
+    - parameterDescription: Take given earmuffs
+      linesOfDialogue:
+      - WHAT!?
+      - DID YOU SAY YOU WANT THESE BACK!?
+      - NO! SCRAM!
+    - parameterDescription: Give wrong item
+      linesOfDialogue:
+      - I DON'T WANT THAT GARBAGE!
+  lookingAtPlayer: 0
 --- !u!1 &2083877557
 GameObject:
   m_ObjectHideFlags: 0

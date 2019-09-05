@@ -25,6 +25,16 @@ TagManager:
   - ToEngine
   - DogBowl
   - StoveCode
+  - EarmuffsGuy
+  - Mom
+  - Boy
+  - Chef
+  - ToiletMan
+  - Main_Char_Model
+  - Worktable
+  - EyeRobot
+  - BathroomRobot
+  - Cabinet
   layers:
   - Default
   - TransparentFX

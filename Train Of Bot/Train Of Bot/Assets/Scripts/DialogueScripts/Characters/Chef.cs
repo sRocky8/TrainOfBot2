@@ -6,12 +6,29 @@ public class Chef : CharacterDialogue {
 
 
     //COPY PASTED FROM EARMUFFS GUY CHANGE LATER
+    private void Awake()
+    {
+        try
+        {
+            canGiveItem = DataStorage.dataStorage.chefCanGive;
+        }
+        catch
+        {
+            canGiveItem = true;
+        }
 
+        try
+        {
+            canRecieveItem = DataStorage.dataStorage.chefCanRecieve;
+        }
+        catch
+        {
+            canRecieveItem = true;
+        }
+    }
 
     void Start()
     {
-        canRecieveItem = true;
-        canGiveItem = true;
         playerInventorySlot = FindObjectOfType<PlayerController>().inventorySlot;
     }
 
@@ -71,5 +88,11 @@ public class Chef : CharacterDialogue {
         {
             dialogueParameter = 4;
         }
+    }
+
+    private void OnDestroy()
+    {
+        DataStorage.dataStorage.chefCanRecieve = canRecieveItem;
+        DataStorage.dataStorage.chefCanGive = canGiveItem;
     }
 }
