@@ -72,7 +72,6 @@ public class EyeRobot : CharacterDialogue {
                     else
                     {
                         dialogueParameter = 2;
-                        canRecieveItem = false;
                     }
                 }
             }

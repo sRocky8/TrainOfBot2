@@ -8,7 +8,7 @@ public class CharacterDialogue : MonoBehaviour {
     [HideInInspector] public bool endedDialogue;
     [HideInInspector] public bool inConversation;
     [HideInInspector] public bool canGiveItem;
-     public bool canRecieveItem; //[HideInInspector]
+     public bool canRecieveItem = true; //[HideInInspector]
     public GameObject find;
     public float rayMaxDistance;
     public int dialogueParameter;

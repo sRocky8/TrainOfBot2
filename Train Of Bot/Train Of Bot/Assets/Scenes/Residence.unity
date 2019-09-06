@@ -5931,7 +5931,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016302137}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 068991399dd57124caa94bd955fed0a8, type: 3}
   m_Name: 
@@ -5948,7 +5948,7 @@ MonoBehaviour:
     dialogueAmount:
     - parameterDescription: Beep no earmuffs
       linesOfDialogue:
-      - 'THIS TRAIN IS TO LOUD!
+      - 'THIS TRAIN IS TOO LOUD!
 
         MAKE IT STOP!'
     - parameterDescription: Take no earmuffs
@@ -6000,7 +6000,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016302137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d0ea867fdcc4af4abc3cf6818a7647e, type: 3}
   m_Name: 

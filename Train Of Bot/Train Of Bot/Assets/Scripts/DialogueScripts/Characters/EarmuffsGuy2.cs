@@ -33,10 +33,8 @@ public class EarmuffsGuy2 : CharacterDialogue {
 
     void Update()
     {
-        if (find.GetComponent<FindPlayer>().seesPlayer == true) {
-            CheckDialogueParam();
-            TalkWithNPC();
-        }
+        CheckDialogueParam();
+        TalkWithNPC();
     }
 
     void CheckDialogueParam()
@@ -67,7 +65,14 @@ public class EarmuffsGuy2 : CharacterDialogue {
                 }
                 if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
                 {
-                    dialogueParameter = 2;
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        dialogueParameter = 2;
+                    }
                 }
             }
         }

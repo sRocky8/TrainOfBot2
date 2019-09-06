@@ -33,8 +33,11 @@ public class EarmuffsGuy : CharacterDialogue {
     }
 	
 	void Update () {
-        CheckDialogueParam();
-        TalkWithNPC();
+        if (find.GetComponent<FindPlayer>().seesPlayer == true)
+        {
+            CheckDialogueParam();
+            TalkWithNPC();
+        }
 	}
 
     void CheckDialogueParam()
@@ -65,8 +68,11 @@ public class EarmuffsGuy : CharacterDialogue {
                 }
                 if (playerInventoryNum == i && playerInventorySlot[i] == (int)Items.Earmuffs)
                 {
+                    Debug.Log("hovering");
                     if (Input.GetKeyDown(KeyCode.Space) == true)
                     {
+                        canRecieveItem = false;
+                        Debug.Log(canRecieveItem);
                         break;
                     }
                     else
