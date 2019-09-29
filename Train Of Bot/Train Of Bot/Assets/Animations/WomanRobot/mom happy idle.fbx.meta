@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: fd7e728ee2c1e0149b0e6f80a7514c70
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Woman_Bot_Mesh
+    100004: woman_chest
+    100006: woman_chest 1
+    100008: woman_core
+    100010: woman_core1
+    100012: woman_hair_bangs
+    100014: woman_hair_l_bang
+    100016: woman_hair_pony_1
+    100018: woman_hair_pony_2
+    100020: woman_hair_pony_3
+    100022: woman_hair_pony_4
+    100024: woman_hair_r_bang_1
+    100026: woman_hair_r_bang_2
+    100028: woman_head
+    100030: woman_hip
+    100032: woman_l_bang
+    100034: woman_l_bot_fingertip
+    100036: woman_l_bot_knuckle
+    100038: woman_l_elbow
+    100040: woman_l_grip
+    100042: woman_l_shoulder
+    100044: woman_l_shoulder 1
+    100046: woman_l_top_fingertip
+    100048: woman_l_top_knuckle
+    100050: woman_l_wrist
+    100052: woman_l_wrist 1
+    100054: woman_neck
+    100056: woman_neck 1
+    100058: woman_pony
+    100060: woman_r_bang
+    100062: woman_r_bot_fingertip
+    100064: woman_r_bot_knuckle
+    100066: woman_r_elbow
+    100068: woman_r_grip
+    100070: woman_r_shoulder
+    100072: woman_r_shoulder 1
+    100074: woman_r_top_fingertip
+    100076: woman_r_top_knuckle
+    100078: woman_r_wrist
+    100080: woman_r_wrist 1
+    100082: woman_skirt
+    100084: woman_waist
+    100086: woman_waist 1
+    100088: woman_wheel
+    100090: woman_wheel 1
+    400000: //RootNode
+    400002: Woman_Bot_Mesh
+    400004: woman_chest
+    400006: woman_chest 1
+    400008: woman_core
+    400010: woman_core1
+    400012: woman_hair_bangs
+    400014: woman_hair_l_bang
+    400016: woman_hair_pony_1
+    400018: woman_hair_pony_2
+    400020: woman_hair_pony_3
+    400022: woman_hair_pony_4
+    400024: woman_hair_r_bang_1
+    400026: woman_hair_r_bang_2
+    400028: woman_head
+    400030: woman_hip
+    400032: woman_l_bang
+    400034: woman_l_bot_fingertip
+    400036: woman_l_bot_knuckle
+    400038: woman_l_elbow
+    400040: woman_l_grip
+    400042: woman_l_shoulder
+    400044: woman_l_shoulder 1
+    400046: woman_l_top_fingertip
+    400048: woman_l_top_knuckle
+    400050: woman_l_wrist
+    400052: woman_l_wrist 1
+    400054: woman_neck
+    400056: woman_neck 1
+    400058: woman_pony
+    400060: woman_r_bang
+    400062: woman_r_bot_fingertip
+    400064: woman_r_bot_knuckle
+    400066: woman_r_elbow
+    400068: woman_r_grip
+    400070: woman_r_shoulder
+    400072: woman_r_shoulder 1
+    400074: woman_r_top_fingertip
+    400076: woman_r_top_knuckle
+    400078: woman_r_wrist
+    400080: woman_r_wrist 1
+    400082: woman_skirt
+    400084: woman_waist
+    400086: woman_waist 1
+    400088: woman_wheel
+    400090: woman_wheel 1
+    2100000: lambert3
+    2100002: lambert1
+    2300000: woman_l_bang
+    2300002: woman_pony
+    2300004: woman_r_bang
+    3300000: woman_l_bang
+    3300002: woman_pony
+    3300004: woman_r_bang
+    4300000: Woman_Bot_Mesh
+    4300002: woman_pony
+    4300004: woman_r_bang
+    4300006: woman_l_bang
+    7400000: HappyIdle
+    9500000: //RootNode
+    13700000: Woman_Bot_Mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HappyIdle
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
